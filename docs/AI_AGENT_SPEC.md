@@ -57,3 +57,9 @@
 Scanner/Reviewer独立只读会话权限预检因请求超时未完成，未派发该角色或宣称隔离生效；用户明确允许本轮由主控扫描、文档维护、Diff复核及正常提交推送。配置TOML和Skill frontmatter可解析，不等于Agent端到端运行验收。此为本轮例外，不改AGENTS默认规则。
 
 当前本地模块/PWA/Notion代理有代码证据；邀请账号、跨用户隔离、DeepSeek、AI记忆、三个产品AI工具、SSE与APScheduler仍未开始实现。实际检查、未测项、版本和下一步见[同步报告](LIFEOS_GITHUB_SYNC_REPORT.md)、[扫描报告](LIFEOS_PROJECT_SCAN_REPORT.md)及[更新记录](CHANGELOG.md)。历史“本次仅七文档/未提交”等段落只描述其原任务。
+
+## 2026-11-05 LADS Stage 4 角色与证据
+
+GPT/Codex 是唯一 controller；Scanner、Reviewer、Builder、QA 使用独立的 DeepSeek 进程和各自密钥环境，不允许原生模型子 Agent 或失败后切换 OpenAI。Reviewer 必须基于实际 Diff 和真实命令/QA 回执给出状态，不能把 Builder 自述或文档摘要当作测试通过。
+
+Stage 4 发布候选还需要精确角色顺序、read-only/workspace-write 权限、模型/profile 绑定、Stage 3 DELIVERY_READY、真实 sealed broker、最终 Review、MAIN-ACK、文档和索引 receipt。critical 审计结果不可由风险声明消除。当前任务要求真实独立复核；GitHub 侧 live PR/check/merge 仍未执行，也不冒充真实人工批准。

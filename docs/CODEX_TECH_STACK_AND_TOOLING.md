@@ -818,3 +818,9 @@ Life OS 不是简单的 AI 聊天网站。
 Scanner/Reviewer独立只读会话权限预检因请求超时未完成，未派发该角色或宣称隔离生效；用户明确允许本轮由主控扫描、文档维护、Diff复核及正常提交推送。配置TOML和Skill frontmatter可解析，不等于Agent端到端运行验收。此为本轮例外，不改AGENTS默认规则。
 
 当前本地模块/PWA/Notion代理有代码证据；邀请账号、跨用户隔离、DeepSeek、AI记忆、三个产品AI工具、SSE与APScheduler仍未开始实现。实际检查、未测项、版本和下一步见[同步报告](LIFEOS_GITHUB_SYNC_REPORT.md)、[扫描报告](LIFEOS_PROJECT_SCAN_REPORT.md)及[更新记录](CHANGELOG.md)。历史“本次仅七文档/未提交”等段落只描述其原任务。
+
+## 2026-11-05 LADS QA 与 CI 工具边界
+
+自动化继续使用标准库 unittest、`python -B` 和 `ast.parse`，禁止 `py_compile`/`compileall` 或任务树内缓存。PWA 可信套件注册表对 build/check 脚本只接受已审计的 CRLF 原始哈希和 Git LF 原始哈希；任何其他字节、路径或命令均失败，broker receipt 以实际 raw digest 绑定。
+
+CI 使用提交 SHA 固定的 actions、`contents: read`、无 secrets 或 `pull_request_target`，PWA 构建输出位于唯一的新临时目录，Playwright 仅作为 runner 工具审计，Python/npm 依赖审计失败即阻断。发布扫描的精确合成豁免不跳过私有路径、未知二进制、字节漂移、其他路径、新凭据或历史命令检查。
