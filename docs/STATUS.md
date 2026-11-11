@@ -1,3 +1,21 @@
+<!-- LADS_STAGE4_ACTUAL_ACCEPTANCE_20261111 -->
+## 2026-11-11 阶段 4 已通过真实 GitHub 验收
+
+任务 `944c3ccd-603c-4f23-af8e-d4e9de4dd0d9` 已完成独立角色执行、主控验收、文档与知识索引交付、提交、推送、PR、真实 CI、原生 Auto-merge 及合并后知识回写。提交 `4cd141dc2ee1c839d05bf80eb2ac3a068ffc8b01`，合并 `2cecda7fc44d5a5458d08759d5540c3c665f876d`。三项工作流和 `LADS / controller` 全部成功，合并后的 main 三项工作流再次通过。重复 resume 返回同一合并回执，没有新增提交或 PR。[已合并 PR 3](https://github.com/dabinglei2-hash/LifeOS/pull/3)
+
+本轮代码修复由用户明确授权的 GPT 主控完成，独立 DeepSeek 角色核验候选及真实 QA，Builder 整理文档。默认四角色仍通过独立 `deepseek-flash` CLI profile 运行。旧失败、39 份历史记录和累计 3 次历史返工全部保留，失败 PR 1、2 已关闭并保留分支及完整日志。
+
+实际测试为 automation 198、knowledge 38、密封 broker 六套件与 34 项检查通过。Windows LADS 89 项全部通过，Linux LADS 89 项中一项 Windows PowerShell 测试按平台跳过。实际 Git 提交的 PWA 回放从 31 项摘要不匹配恢复为 0，未修改的浏览器 harness 通过全部 14 项检查，含离线 PWA。真实用户数据恢复、iPhone 实机尚未测试，产品真实多用户认证与 AI 权限继续保持原有未实现状态。
+
+正式开发分支仍保留原 HEAD 与未提交内容。发布使用独立任务分支；工作流、存储和个人记录按原边界保护。后续普通任务从核验后的 `origin/main` 准备隔离 worktree，再明确纳入获准修改。当前机器的 Git 发布进程沿用已启用的 Windows 本地代理，GitHub API 使用直连，标准 TLS 校验保持启用。
+
+当前结果优先于下方旧快照，旧 PENDING/BLOCKED 只代表其记录时点。完整证据见 [阶段 4 验收报告](LADS_STAGE4_ACCEPTANCE_REPORT.md)。
+
+
+---
+
+以下保留原有历史记录。
+
 # 当前开发状态
 
 2026-11-02 GitHub归档：本轮仅同步现有代码/七核心文档/Agent与Skills，不新增业务实现。独立只读角色预检超时，用户允许主控替代本轮审查。最新提交/远程与实际测试见[同步报告](LIFEOS_GITHUB_SYNC_REPORT.md)。以下通过数均属于历史任务，本轮不累加。
@@ -361,3 +379,15 @@ Main-authored five-path correction refreshed only three portability tests (`test
 Task `a279d5e4-a5e5-4a5a-b1cf-369508d7b0c5` had passed independent QA and final review before actual PR2 GitHub CI run 43005744900. That run passed automation 197, knowledge 38, LADS 89 with one Windows-only skip, JavaScript syntax, PWA build/check, Security, and Docs, but failed browser Service Worker activation; PR2 remains open and unmerged, and every earlier failed run remains retained unchanged. The failure was an engineering CI subject-selection issue: the build step regenerated `sw.js` in its unique isolated repository copy while the browser step served the original checkout's stale generated precache.
 
 Main replayed exact commit `2cad265f654b3bece9792babb8c40c0e329f7d67` with `git archive` in a private copy. The unchanged browser harness reproduced the failure with 31 digest mismatches; after the existing PWA build and checker ran in that copy, all mismatches were removed and the unchanged harness passed all 14 checks, including `offline-pwa`. The Linux notes API contract also passed with FakeNotion and no remote personal data. The source correction only changes `.github/workflows/ci.yml` and `tests/automation/test_github_release.py`: CI exports the existing unique build copy through `GITHUB_ENV` as `LADS_PWA_TEST_ROOT`, and the browser step changes into that exact root after tool setup and before executing the unchanged harness. The regression verifies the exported root, build working directory, and browser working-directory order. Cross-platform portability tests and exact synthetic-fixture hash pins are retained; the regression accepts truthful PENDING/BLOCKED/PASS document declarations, while Docs still requires actual PR, four successful checks, and merge evidence for PASS. Digest verification, Service Worker and browser assertions, required checks, branch protection, production source, and the browser harness were not weakened or otherwise changed. Fresh independent QA on this document candidate, actual post-fix GitHub CI, PR2 merge, deployment, and Live GitHub E2E remain pending; no Linux CI, merge, or deployment success is claimed.
+
+
+<!-- LADS_STAGE4_DOC_ARCHIVE_TEST_RECOVERY_20261112 -->
+### 2026-11-12 最终文档归档的源恢复与测试修正
+
+独立归档任务 `1ae3c016-8b6b-44e6-8c59-16af18b56fda` 的 QA/审查失败原样保留，实际构建 1 次、代码返工 0 次。Windows checkout/archive 换行转换会改变受校验文件字节，主控已备份并用 `git cat-file blob` 恢复 76 个工程路径及未修改的 `docs/LADS_AUTOMATION.md`，逐项确认仅换行差异；可信测试清单的七项校验恢复通过。
+
+主控另修正 `tests/automation/test_install.py` 的历史归档断言，按原安装清单验证四个候选的完整 SHA，不再依赖持续维护的当前 AGENTS/Skills。原安装清单、候选字节及生产安装器的 HEAD/源漂移拒绝测试保留。首次尝试校验历史前缀哈希失败，日志和尝试文件保留，未将其宣称通过。修正后的聚焦 12 项与主控完整 198 项通过，日志位于私有 `work/lads-stage4-document-archive-20261111/`。
+
+这次仅补充工程文档及一项测试。代码 PR3 已验证的合并结果继续有效，本归档在候选生成时仍须完成独立 QA/审查与 GitHub 门禁。既有三次代码返工、全部失败、用户未提交内容及产品数据均保留。
+
+2026-11-12 文档归档候选：独立任务 `71bc6bb5-3087-42f5-92fd-3786e5ff9e05`（build 1，来源 HEAD `2cecda7fc44d5a5458d08759d5540c3c665f876d`，source snapshot `8547c5f99c62fdfa4db357f8d89d5d517cb6c9244233b7d4d8c6d6685d7e7121`）归档九份工程文档并包含一项历史安装测试修正，不改变产品代码或产品能力；其独立 QA、最终审查和 GitHub 发布仍待完成。代码 PR3 的实测合并结果 `4cd141dc2ee1c839d05bf80eb2ac3a068ffc8b01` / `2cecda7fc44d5a5458d08759d5540c3c665f876d` 继续有效，旧失败、三轮代码返工和全部 QA 限制原样保留。

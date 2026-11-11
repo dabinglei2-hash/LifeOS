@@ -106,25 +106,23 @@ class InstallPlanTests(unittest.TestCase):
         self.assertNotIn("shutil.copy", text)
         self.assertNotIn("write_bytes(", text)
 
-    def test_existing_candidates_preserve_original_bytes_as_prefix(self):
-        pairs = (
-            (
-                ROOT / ".agents/skills/lifeos-data-guard/SKILL.md",
-                ROOT / "engineering/lads-stage3-install/skills/lifeos-data-guard/SKILL.md",
-            ),
-            (
-                ROOT / ".agents/skills/lifeos-ios-design/SKILL.md",
-                ROOT / "engineering/lads-stage3-install/skills/lifeos-ios-design/SKILL.md",
-            ),
-            (
-                ROOT / ".agents/skills/lifeos-project-memory/SKILL.md",
-                ROOT / "engineering/lads-stage3-install/skills/lifeos-project-memory/SKILL.md",
-            ),
-            (ROOT / "AGENTS.md", ROOT / "engineering/lads-stage3-install/AGENTS.md"),
-        )
-        for original, candidate in pairs:
-            with self.subTest(candidate=candidate.name):
-                self.assertTrue(candidate.read_bytes().startswith(original.read_bytes()))
+    def test_historical_candidates_match_reviewed_install_map(self):
+        # The immutable install proposal pins complete candidate bytes. Later
+        # approved edits to live AGENTS or skills must not rewrite that history.
+        plan = json.loads(MAP.read_text(encoding="utf-8"))
+        sources = {
+            ".agents/skills/lifeos-data-guard/SKILL.md",
+            ".agents/skills/lifeos-ios-design/SKILL.md",
+            ".agents/skills/lifeos-project-memory/SKILL.md",
+            "AGENTS.md",
+        }
+        targets = [row for row in plan["targets"] if row["source_path"] in sources]
+        self.assertEqual(sources, {row["source_path"] for row in targets})
+        for row in targets:
+            with self.subTest(source=row["source_path"]):
+                self.assertFalse(row["original_absent"])
+                candidate = (ROOT / row["candidate_path"]).read_bytes()
+                self.assertEqual(row["candidate_sha256"], hashlib.sha256(candidate).hexdigest())
 
     def test_seven_skill_candidates_have_valid_contract_sections(self):
         required = (

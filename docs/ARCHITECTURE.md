@@ -1,3 +1,19 @@
+<!-- LADS_STAGE4_ACTUAL_ACCEPTANCE_20261111 -->
+## 2026-11-11 LADS 发布工程实际架构
+
+`lads_automation/github_release.py` 和 `scripts/lads_github.py` 已通过实际受保护 GitHub 发布。输入为 Stage 3 精确候选、真实 QA/Reviewer、MAIN-ACK、文档与私有知识回执及任务级授权。控制器只在独立 worktree 精确暂存，按 TASK_ID 生成分支、提交与 PR，持久化 intent、有限重试及幂等状态。
+
+三个工作流检查绑定官方 Actions 应用、提交、明确的 workflow 文件/ID、run ID 和 check_suite_id。CI 全部成功后先登记并回读原生 Auto-merge，再提交绑定候选的控制器状态，随后核实真实合并及祖先关系。发布 journal 使用 `MERGED`；知识表沿用 `completed` 状态，通过 `release_state_changed` 事件保存真实合并 SHA 与 PR，不改变工程数据库 schema。
+
+只读模型 QA 验证可信隔离执行器的两份单测回执与浏览器回执。`lads_automation/unit_qa.py` 负责固定命令、受控临时文件和完整退出证据。CI 浏览器使用已重建 PWA 缓存清单的隔离仓库，通过 `LADS_PWA_TEST_ROOT` 传递路径；保留资源完整性和离线断言。当前环境的 Git 进程使用既有 Windows 代理，API 直连，均为进程级配置。
+
+真实合并 `2cecda7fc44d5a5458d08759d5540c3c665f876d`，各层数据和产品架构边界沿用原规则。业务存储、JSON v11 与页面路由本轮没有结构变更。[验收报告](LADS_STAGE4_ACCEPTANCE_REPORT.md)
+
+
+---
+
+以下保留原有历史记录。
+
 # Life OS — ARCHITECTURE
 
 更新：2026-11-02。状态口径：**当前已实现**仅表示代码存在；**已确认决策**表示产品方向；**目标架构**尚待实施；**待验证**不得作为上线事实。本文当前基线优先于下方历史快照；历史内容保留，不代表再次授权开发或测试通过。

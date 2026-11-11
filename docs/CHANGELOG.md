@@ -1,3 +1,16 @@
+<!-- LADS_STAGE4_ACTUAL_ACCEPTANCE_20261111 -->
+## 2026-11-11 · LADS 2.0 阶段 4 工程验收
+
+- 新增并归档受证据约束的 GitHub 发布控制器、CI/Security/Docs 工作流及只读 QA 单测执行适配，首次上传范围 119 个工程文件。
+- 修复跨平台路径/平台模拟、工作流来源验证和 CI PWA 浏览器目录，保留全部完整性与安全门禁。
+- 通过真实 PR、四项必需检查、原生合并、合并后 main CI、私有知识回写和幂等 resume。合并 `2cecda7fc44d5a5458d08759d5540c3c665f876d`。[PR 3](https://github.com/dabinglei2-hash/LifeOS/pull/3)
+- 本轮主控实现与独立审查分别记载，失败与旧计数保留。正式用户分支及原未提交修改保留。
+
+
+---
+
+以下保留原有历史记录。
+
 # Life OS 更新记录
 
 ## v0.3.0-sync-2026-11-02 — 2026-11-02
@@ -34,3 +47,5 @@ Main-authored five-path correction refreshed only three portability tests (`test
 Actual PR2 GitHub CI run 43005744900 retained a browser Service Worker activation failure while automation 197, knowledge 38, LADS 89 with one Windows-only skip, JavaScript syntax, PWA build/check, Security, and Docs passed. PR2 remains open and unmerged. The cause was a CI directory mismatch: `sw.js` was regenerated in the unique build copy, but the browser step served the original checkout's stale precache.
 
 Main's exact private replay of commit `2cad265f654b3bece9792babb8c40c0e329f7d67` reproduced 31 digest mismatches with the unchanged harness; running the existing PWA build and checker there cleared every mismatch and the unchanged harness passed all 14 checks, including `offline-pwa`. The Linux notes API contract passed with FakeNotion and no remote personal data. `.github/workflows/ci.yml` now exports `LADS_PWA_TEST_ROOT` from the existing unique build copy and enters it before the unchanged browser harness; `tests/automation/test_github_release.py` verifies that ordering and truthful PENDING/BLOCKED/PASS declarations, while Docs still requires live PASS evidence. Digest, Service Worker, browser, required-check, and branch-protection gates remain strict. Actual post-fix GitHub E2E, PR2 merge, deployment, and Live GitHub E2E remain pending.
+
+2026-11-12 文档归档候选：独立任务 `71bc6bb5-3087-42f5-92fd-3786e5ff9e05`（build 1，来源 HEAD `2cecda7fc44d5a5458d08759d5540c3c665f876d`，source snapshot `8547c5f99c62fdfa4db357f8d89d5d517cb6c9244233b7d4d8c6d6685d7e7121`）归档九份工程文档并包含一项历史安装测试修正，不改变产品代码或产品能力；其独立 QA、最终审查和 GitHub 发布仍待完成。代码 PR3 的实测合并结果 `4cd141dc2ee1c839d05bf80eb2ac3a068ffc8b01` / `2cecda7fc44d5a5458d08759d5540c3c665f876d` 继续有效，旧失败、三轮代码返工和全部 QA 限制原样保留。

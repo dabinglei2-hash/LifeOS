@@ -1,10 +1,31 @@
-# LADS GitHub 自动化
+# LADS GitHub 自动化运行说明
+
+2026-11-11 当前链路已实际验收，下方旧快照按记录时点理解。
+
+## Live GitHub E2E: PASS
+
+- PR: https://github.com/dabinglei2-hash/LifeOS/pull/3
+- LADS CI / ci: success
+- LADS Security / security: success
+- LADS Docs / docs: success
+- LADS / controller: success
+- Merged: true
+- Merge commit SHA: 2cecda7fc44d5a5458d08759d5540c3c665f876d
+
+任务 `944c3ccd-603c-4f23-af8e-d4e9de4dd0d9`，提交 `4cd141dc2ee1c839d05bf80eb2ac3a068ffc8b01`。原生 Auto-merge 在控制器成功状态之前登记，实际合并与私有知识回写完成；同一授权 resume 幂等，合并后 main 三工作流再次通过。完整记录见 [阶段 4 验收报告](LADS_STAGE4_ACCEPTANCE_REPORT.md)。
+
+当前实现包含精确来源/回执/文件门禁、只读 QA 可信执行适配、三个 workflow 来源绑定、失败关闭及受保护原生合并。CI 浏览器必须使用现有构建步骤产生的隔离副本，保留 Service Worker 完整性和离线断言。普通任务已有用户授权，主控按全部门禁自动处理，高风险与部署保留单独授权边界。
+
+## 历史实现与验收快照
+
+此前 Live GitHub E2E 声明为 PENDING，原始内容保留于历史版本和下方记录。
+
 
 更新日期：2026-11-04
 
 本文描述 Stage 4 已落地的工程实现和运行边界。它不表示真实 GitHub 端到端发布已完成；当前单元测试只使用注入的 GitHub transport。
 
-## Live GitHub E2E: PENDING
+此前状态声明已由上述真实结果更新。
 
 ## Stage 4 repair clarifications
 
