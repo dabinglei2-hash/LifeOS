@@ -51,3 +51,49 @@ description: 为 Life OS 初始化或维护项目事实、决策、进度和交�
 5. 检查文件链接、路径与现有代码的一致性，以及是否泄露秘密或触及只读文件。
 
 结束时简述更新文件、关键事实变化、实际验证和待确认事项。若无法写入，提供明确的建议内容并说明未落盘，不能声称文档已更新。需要其他技能时可结合使用，但本技能不依赖它们才能运行。
+
+## Stage 3 applicability
+
+- Use this skill when task scope, verified status, architecture, data boundaries, or handoff facts change.
+- Preserve historical prose and append current facts with dates and evidence.
+- Keep PRD intent, architecture reality, and status evidence distinct.
+
+## Stage 3 steps
+
+1. Verify source, tests, and Git state before describing an outcome.
+2. Append only evidence-backed changes and label planned, unimplemented, blocked, and deferred items.
+3. Update the hard document and index gates using the existing publisher.
+4. Retry a failed document or index stage without overwriting concurrent edits.
+5. Leave final delivery false until receipts prove the complete scope.
+
+## Stage 3 safety and output
+
+- Do not convert a model report or synthetic receipt into a real approval.
+- Do not delete prior failures or pending records.
+- Output changed documents, receipt status, unresolved items, and the next independent role.
+
+## Stage 3 acceptance
+
+Acceptance requires current source and test evidence, append-only factual
+history, successful document and index receipts, preserved concurrent edits,
+and an explicit list of unfinished or unverified scope.
+
+## Safety
+
+Follow only the existing data, privacy, backup, permission, and no-real-data boundaries above; never weaken them for test convenience.
+
+## Output
+
+Report changed paths, actual evidence, backup and recovery location, residual risk, and every unverified or blocked check.
+
+## Acceptance
+
+Acceptance requires independent review, the prescribed commands with actual exit status, owner Private evidence for live checks, and preserved historical data.
+
+## Applicability
+
+Use this skill within its existing project role and the AGENTS-authorized task scope.
+
+## Steps
+
+Follow the role-specific procedure above; use the Stage 3 sections only for bridge, event, evidence, and acceptance clarifications.

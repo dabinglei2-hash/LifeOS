@@ -17,3 +17,10 @@
 
 - 2026-10-26：v0.2.0-backup-2026-10-26，代码12f1ee6、说明7cdfe58，见[原版本记录](VERSION_HISTORY.md)。
 - 2026-10-27：PWA曾保存Sites版本1并私密发布；这是历史托管记录，不能推断2026-11-02在线状态，见[历史报告](PWA-SITES-REPORT-20261027.md)。
+
+## 2026-11-05 LADS Stage 4 工程候选
+
+- 发布审计将 critical findings 与可声明 high risks 分离；critical 必须修复，不能通过 authorization flag 消除。
+- CI 安全扫描补齐 controller 的凭据形状和历史命令规则，并对既有出站合成/防御样例采用精确路径、原始 SHA-256、具体规则三元组豁免。
+- PWA build/check QA 信任注册表登记同一未变公共脚本的 CRLF 与 LF 原始表示；实际 raw digest、candidate/source inventory 和 broker receipt 绑定保持严格。
+- 修复后 automation 174 / knowledge 38 全量通过，全出站 audit 0 critical；独立复核与真实 GitHub E2E 尚未完成，未提交、推送、整合或部署。

@@ -201,3 +201,9 @@ Sites默认owner私密；新网址无旧记录是来源隔离，不代表数据�
 Scanner/Reviewer独立只读会话权限预检因请求超时未完成，未派发该角色或宣称隔离生效；用户明确允许本轮由主控扫描、文档维护、Diff复核及正常提交推送。配置TOML和Skill frontmatter可解析，不等于Agent端到端运行验收。此为本轮例外，不改AGENTS默认规则。
 
 当前本地模块/PWA/Notion代理有代码证据；邀请账号、跨用户隔离、DeepSeek、AI记忆、三个产品AI工具、SSE与APScheduler仍未开始实现。实际检查、未测项、版本和下一步见[同步报告](LIFEOS_GITHUB_SYNC_REPORT.md)、[扫描报告](LIFEOS_PROJECT_SCAN_REPORT.md)及[更新记录](CHANGELOG.md)。历史“本次仅七文档/未提交”等段落只描述其原任务。
+
+## 2026-11-05 LADS Stage 4 工程发布门槛
+
+本轮只增强 Life OS 的 LADS 工程发布与验证能力，不改变产品用户流程、业务存储、身份权限或 AI 工具范围。GPT/Codex 保持唯一主控；Scanner、Reviewer、Builder、QA 必须使用各自独立的 DeepSeek profile，不能以原生子 Agent 或静默 GPT 回退替代。
+
+发布候选必须绑定真实角色阶段、权限预检、精确文件哈希、独立 QA 与 sealed broker、Reviewer 最终批准、文档和知识索引回执。凭据/私有路径/未审计二进制/历史重写仍 fail closed；只有精确路径、原始哈希和规则均匹配的合成样例可豁免。真实 GitHub E2E 仍为 PENDING，不得用虚构 PR、check、人工批准或 merge 结果代替。
