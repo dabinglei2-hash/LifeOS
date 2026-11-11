@@ -17,3 +17,20 @@
 
 - 2026-10-26：v0.2.0-backup-2026-10-26，代码12f1ee6、说明7cdfe58，见[原版本记录](VERSION_HISTORY.md)。
 - 2026-10-27：PWA曾保存Sites版本1并私密发布；这是历史托管记录，不能推断2026-11-02在线状态，见[历史报告](PWA-SITES-REPORT-20261027.md)。
+
+## 2026-11-05 LADS Stage 4 工程候选
+
+- 发布审计将 critical findings 与可声明 high risks 分离；critical 必须修复，不能通过 authorization flag 消除。
+- CI 安全扫描补齐 controller 的凭据形状和历史命令规则，并对既有出站合成/防御样例采用精确路径、原始 SHA-256、具体规则三元组豁免。
+- PWA build/check QA 信任注册表登记同一未变公共脚本的 CRLF 与 LF 原始表示；实际 raw digest、candidate/source inventory 和 broker receipt 绑定保持严格。
+- 修复后 automation 174 / knowledge 38 全量通过，全出站 audit 0 critical；独立复核与真实 GitHub E2E 尚未完成，未提交、推送、整合或部署。
+
+## 2026-11-11 Main-authorized portability correction
+
+Main-authored five-path correction refreshed only three portability tests (`test_native_entrypoint.py`, `test_qa.py`, and `test_orchestrator.py`) and the two matching raw SHA pins in `lads_automation/github_release.py` and `.github/workflows/security.yml`; the production native guard, broker protections, permission verification, product data, and security rules are unchanged, and no exemption path, pattern, or waiver was added. PR1 remains open and unmerged; its Linux CI run 42996932856 recorded 196 automation tests with two failures and one error while Security and Docs passed, so that failure remains retained. Main reported an actual native Linux copy passed automation 197, knowledge 38, and LADS 89 with one explicitly Windows-only skip; the prior Windows LADS 89 pass and final Windows rerun remain main-recorded. Main implementation and independent verification are distinct; the earlier QA approval for doc candidate 94785789-d279-4a2d-bf53-d105dfe4e689 was not accepted, published, or reused after supplemental Linux tests. Fresh independent QA on this candidate, actual GitHub CI on the corrected head, and native merge remain pending until their receipts; this is not a product permission change, Linux full-suite claim, merge, deployment, or Live GitHub E2E success.
+
+## 2026-11-11 LADS CI PWA directory correction
+
+Actual PR2 GitHub CI run 43005744900 retained a browser Service Worker activation failure while automation 197, knowledge 38, LADS 89 with one Windows-only skip, JavaScript syntax, PWA build/check, Security, and Docs passed. PR2 remains open and unmerged. The cause was a CI directory mismatch: `sw.js` was regenerated in the unique build copy, but the browser step served the original checkout's stale precache.
+
+Main's exact private replay of commit `2cad265f654b3bece9792babb8c40c0e329f7d67` reproduced 31 digest mismatches with the unchanged harness; running the existing PWA build and checker there cleared every mismatch and the unchanged harness passed all 14 checks, including `offline-pwa`. The Linux notes API contract passed with FakeNotion and no remote personal data. `.github/workflows/ci.yml` now exports `LADS_PWA_TEST_ROOT` from the existing unique build copy and enters it before the unchanged browser harness; `tests/automation/test_github_release.py` verifies that ordering and truthful PENDING/BLOCKED/PASS declarations, while Docs still requires live PASS evidence. Digest, Service Worker, browser, required-check, and branch-protection gates remain strict. Actual post-fix GitHub E2E, PR2 merge, deployment, and Live GitHub E2E remain pending.

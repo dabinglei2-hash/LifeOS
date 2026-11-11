@@ -63,3 +63,80 @@ Scanner/Reviewer独立只读会话权限预检因请求超时未完成，未派�
 当前本地模块/PWA/Notion代理有代码证据；邀请账号、跨用户隔离、DeepSeek、AI记忆、三个产品AI工具、SSE与APScheduler仍未开始实现。实际检查、未测项、版本和下一步见[同步报告](LIFEOS_GITHUB_SYNC_REPORT.md)、[扫描报告](LIFEOS_PROJECT_SCAN_REPORT.md)及[更新记录](CHANGELOG.md)。历史“本次仅七文档/未提交”等段落只描述其原任务。
 
 归档结果补记：2026-11-02代码提交07db71e已推送私有main，121个远程文件对象核对一致；报告补记采用第二次正常提交。实际测试与未测项见[同步报告](LIFEOS_GITHUB_SYNC_REPORT.md)，不表示目标AI/多用户阶段已完成。
+
+## 2026-11-05 LADS Stage 4 Build 1
+
+- 修复前基线已实际执行：automation 171 tests、knowledge 38 tests，均 OK；这组基线不计为修复后最终 QA。
+- 已修复 critical finding 可被声明风险抵消、CI 与 controller 扫描规则不一致、PWA QA 只接受单一换行表示三个阻断；新增精确豁免和 LF/CRLF/changed-content 回归。
+- 修复后本 worktree 全量已实际执行：automation 174 tests、knowledge 38 tests，均 OK；全出站 release audit 为 0 critical。
+- 当前状态是 Builder 候选完成、待独立 Scanner/Reviewer/QA。没有 commit、push、PR、CI、merge、部署或真实人工批准。
+- 产品多用户认证、产品 AI 工具、真实 GitHub E2E 和 production deployment 仍未实现/未执行。
+
+## 2026-11-05 LADS Stage 4 v2 QA progress
+
+- Added controller-owned unit execution and strict v2 report/context verification in `lads_automation/unit_qa.py`; browser broker v1 is unchanged.
+- Stage3 now materializes the exact two unit verifiers plus browser verifier for read-only QA, while the controller executes the two exact unittest commands in an isolated copy.
+- Delivery distinguishes exact legacy and v2 tuples, includes bounded unit evidence in QA/controller proof, and Stage4 release validation reloads actual v2 receipts before publication.
+- Added success and rejection coverage for tampering, wrong candidate/task/command, missing/failed/skipped/timeout/infrastructure results, legacy compatibility, and release binding.
+- Actual current-candidate tests: automation `185 tests / OK / exit 0`; knowledge `38 tests / OK / exit 0`; changed Python files passed stdout-only `ast.parse`.
+- Not yet verified here: bootstrap unit artifacts, the three prescribed read-only QA commands, final independent review, PR/CI/merge/deploy, and Live GitHub E2E (PENDING).
+
+## 2026-11-05 LADS Stage 4 v2 release-ordering smoke
+
+- Task ID: `0502f178-5a54-41d2-8b7c-e7d7bce47e3a`; Builder build 1; Source HEAD `aea9e758baac88c310319f34a77f94f2364b0c11`.
+- Narrow scope: correct native auto-merge/controller-status ordering, keep workflow contexts bound to actual GitHub Actions check runs, and add focused ordering/failure/resume regressions.
+- Actual local focused test: `python -B -m unittest tests.automation.test_github_release -v`, `61 tests / OK / exit 0`.
+- The trusted controller must still run the full v2 unit/browser sequence and independent QA/Reviewer/main/document/index gates on the exact candidate. PR, CI, native merge, deployment, and Live GitHub E2E remain PENDING; product data and dependencies are unchanged.
+
+## 2026-11-05 LADS Stage 4 v2 release-ordering build 2
+
+- Task ID: `0502f178-5a54-41d2-8b7c-e7d7bce47e3a`; Builder build 2; Source HEAD remains `aea9e758baac88c310319f34a77f94f2364b0c11`.
+- Narrow scope: preserve the workflow-run-only release gate and native auto-merge ordering while binding exact-success recovery to durable LADS status intent and native registration-attempt state.
+- Actual focused test: `python -B -m unittest tests.automation.test_github_release -v`, `63 tests / OK / exit 0`; stdout-only `ast.parse` passed for the changed controller and test module.
+- Trusted full unit/browser execution, independent v2 QA, final Reviewer Diff approval, document/index receipts, PR/CI/native merge/deploy, and Live GitHub E2E remain PENDING. No product data, credentials, dependencies, or permissions were changed.
+
+## 2026-11-05 LADS Stage 4 v2 release-ordering build 3
+
+- Task ID: `0502f178-5a54-41d2-8b7c-e7d7bce47e3a`; Builder build 3; Source HEAD remains `aea9e758baac88c310319f34a77f94f2364b0c11`.
+- The controller backup manifest matched all seven allowed paths before this documentation append. The build retains exact workflow-run gating, native auto-merge registration/read-back before controller success, the repeated remote gate, and durable evidence requirements for resumed or externally merged PRs.
+- Actual build-3 focused test: `python -B -m unittest tests.automation.test_github_release -v`, `63 tests / OK / exit 0` in 87.045s; stdout-only `ast.parse` passed for the controller and test module.
+- The prior independent QA failure remains recorded: both unit verifiers exited 1 because the external report was absent, while the broker verifier exited 0. Current trusted full-unit/browser execution, independent QA, final Reviewer approval, document/index receipts, PR/CI/native merge/deploy, and Live GitHub E2E remain PENDING.
+
+<!-- lads-automation:event {"doc":"docs/DEVELOPMENT_PROGRESS.md","id":"56f44600-57dc-5f32-8364-cc7e18edb909","payload_sha256":"489d5042d6fcac437b1c23129c141f1e861f92a737cdb2da16822ed1fffc1b25"} -->
+### LADS event 56f44600-57dc-5f32-8364-cc7e18edb909
+
+- Task: `e63d0fd8-9d81-4518-a621-1a22a9481f4d`
+- Event: `task_state_changed`
+- Recorded: `2026-11-11T09:35:16.621647Z`
+- QA/review verified: `true` (machine delivery receipt `{"acceptance_mode":"independent","authorization_sha256":null,"candidate_sha256":"9932e7f2f5e7712bfea3476799a4061c0e81b5843698d1298460776208c74c8a","controller_sha256":"6071fa8a8a4f29466efe6a0e140bd7949318dbecc0787f9f976cd0284b83c2b4","qa_sha256":"e788240e67ecad0835d1652e7290a4135acdc10e333024bf5588eb96b4a15f4c","reviewer_sha256":"ded3281396a25a8d3ad671da3658fb158aa17b85a34aeb5cfa4c4324f0ff1df0","simulated":false}`)
+- summary: "Stage 3 delivery event: task_state_changed"
+- reason: "Normal v2 Stage4 actual trusted unit and browser evidence, independent DeepSeek read-only QA and final Reviewer accepted. Live GitHub remains PENDING until protected native merge. No product data or deployment."
+- details: "{\"candidate_sha256\":\"9932e7f2f5e7712bfea3476799a4061c0e81b5843698d1298460776208c74c8a\",\"changed_files\":[\"lads_automation/github_release.py\",\"tests/automation/test_github_release.py\"],\"changed_files_count\":2,\"changed_files_sha256\":\"9b43702f0435dd7600814d77f34a97b69daf63c45067c8717f95c0de07977783\",\"dirty\":true,\"observed_head\":\"aea9e758baac88c310319f34a77f94f2364b0c11\",\"qa_contract_version\":2,\"reason\":\"Normal v2 Stage4 actual trusted unit and browser evidence, independent DeepSeek read-only QA and final Reviewer accepted. Live GitHub remains PENDING until protected native merge. No product data or deployment.\",\"review\":{\"sha256\":\"ded3281396a25a8d3ad671da3658fb158aa17b85a34aeb5cfa4c4324f0ff1df0\",\"status\":\"APPROVED\"},\"source_head\":\"aea9e758baac88c310319f34a77f94f2364b0c11\",\"task_id\":\"e63d0fd8-9d81-4518-a621-1a22a9481f4d\",\"tests\":[{\"command\":\"python -B scripts/lads_stage3.py verify-unit automation ../../qa-unit-current.json\",\"exit_code\":0,\"status\":\"completed\"},{\"command\":\"python -B scripts/lads_stage3.py verify-unit knowledge ../../qa-unit-current.json\",\"exit_code\":0,\"status\":\"completed\"},{\"command\":\"python -B scripts/lads_stage3.py verify-broker ../../qa-broker-current.json\",\"exit_code\":0,\"status\":\"completed\"}],\"unit_evidence_sha256\":\"3af03a4768909d47b8ec90baaf3b09ccb0f3febbff7696c4f6322cdb45a1be17\",\"working_content_commit\":null}"
+- component: "lads-stage3"
+<!-- /lads-automation:event -->
+
+<!-- lads-automation:event {"doc":"docs/DEVELOPMENT_PROGRESS.md","id":"7aa6ed8a-4947-5d0a-8744-bd34174431e9","payload_sha256":"714d18357eaab27c2e8d578d0c4a35358132e808c31fd252351a11ce931131d5"} -->
+### LADS event 7aa6ed8a-4947-5d0a-8744-bd34174431e9
+
+- Task: `a279d5e4-a5e5-4a5a-b1cf-369508d7b0c5`
+- Event: `task_state_changed`
+- Recorded: `2026-11-11T10:33:00.262907Z`
+- QA/review verified: `true` (machine delivery receipt `{"acceptance_mode":"independent","authorization_sha256":null,"candidate_sha256":"d6ef9facda4f1c8b8984848a81e66645dfe7cc26d1f70ef3e31cf600aab313aa","controller_sha256":"01c22c714b52db0faef7c7e746385cb136622348328d159f0de06c1ed5beff95","qa_sha256":"48cac71d3fa522b35109b6e2a2e6de33d25ad9dc319a7297aa02d068c2f7a391","reviewer_sha256":"3fd8bce400bccc5d4ed17fd1611e3cb17431374b834aa98ab202012176b33856","simulated":false}`)
+- summary: "Stage 3 delivery event: task_state_changed"
+- reason: "Main-authorized engineering completion with three main-authored test portability fixes and two exact fixture hash-pin updates. Fresh independent DeepSeek inspection, trusted unit/browser execution, read-only QA and final review cover the resulting candidate; Builder changes factual documentation only. Prior PR1 Linux CI failure remains retained. GitHub E2E stays PENDING until actual protected native merge."
+- details: "{\"candidate_sha256\":\"d6ef9facda4f1c8b8984848a81e66645dfe7cc26d1f70ef3e31cf600aab313aa\",\"changed_files\":[\"docs/CHANGELOG.md\",\"docs/STATUS.md\"],\"changed_files_count\":2,\"changed_files_sha256\":\"3cea07406a6183a6b4bee92b049c5db0ea2a01ea35b2637ba2828cc3a1d3f749\",\"dirty\":true,\"observed_head\":\"aea9e758baac88c310319f34a77f94f2364b0c11\",\"qa_contract_version\":2,\"reason\":\"Main-authorized engineering completion with three main-authored test portability fixes and two exact fixture hash-pin updates. Fresh independent DeepSeek inspection, trusted unit/browser execution, read-only QA and final review cover the resulting candidate; Builder changes factual documentation only. Prior PR1 Linux CI failure remains retained. GitHub E2E stays PENDING until actual protected native merge.\",\"review\":{\"sha256\":\"3fd8bce400bccc5d4ed17fd1611e3cb17431374b834aa98ab202012176b33856\",\"status\":\"APPROVED\"},\"source_head\":\"aea9e758baac88c310319f34a77f94f2364b0c11\",\"task_id\":\"a279d5e4-a5e5-4a5a-b1cf-369508d7b0c5\",\"tests\":[{\"command\":\"python -B scripts/lads_stage3.py verify-unit automation ../../qa-unit-current.json\",\"exit_code\":0,\"status\":\"completed\"},{\"command\":\"python -B scripts/lads_stage3.py verify-unit knowledge ../../qa-unit-current.json\",\"exit_code\":0,\"status\":\"completed\"},{\"command\":\"python -B scripts/lads_stage3.py verify-broker ../../qa-broker-current.json\",\"exit_code\":0,\"status\":\"completed\"}],\"unit_evidence_sha256\":\"0922b916981be072d6904306d43df359c8256a2807a7f75ea59ee97dae534244\",\"working_content_commit\":null}"
+- component: "lads-stage3"
+<!-- /lads-automation:event -->
+
+<!-- lads-automation:event {"doc":"docs/DEVELOPMENT_PROGRESS.md","id":"92a081d9-243f-5b05-9a68-1e0b82a853b6","payload_sha256":"021a0c25c9bae6defb1fb2a3d5dc46935c80e9f53d1558bb40aff8a69cbfb47c"} -->
+### LADS event 92a081d9-243f-5b05-9a68-1e0b82a853b6
+
+- Task: `944c3ccd-603c-4f23-af8e-d4e9de4dd0d9`
+- Event: `task_state_changed`
+- Recorded: `2026-11-11T11:17:36.600705Z`
+- QA/review verified: `true` (machine delivery receipt `{"acceptance_mode":"independent","authorization_sha256":null,"candidate_sha256":"fcfe2960fd854f05e1a378e736b1b8a59845c93e6ddeaaa04a9363d96ce9c062","controller_sha256":"8960081ad160cc92876aba337f65123bd50e79fea5a5c15739b573008657edaf","qa_sha256":"131d994200d873dbdd98e97466c07ac3294b8e8148c31e8281aaea05bb1344f5","reviewer_sha256":"7b2915d5728da725c044906d1f130cda2700d2eae4858f62f135b443b7387985","simulated":false}`)
+- summary: "Stage 3 delivery event: task_state_changed"
+- reason: "Main-authorized engineering completion with three main-authored test portability fixes and two exact fixture hash-pin updates. Fresh independent DeepSeek inspection, trusted unit/browser execution, read-only QA and final review cover the resulting candidate; Builder changes factual documentation only. Prior PR1 Linux CI failure remains retained. GitHub E2E stays PENDING until actual protected native merge."
+- details: "{\"candidate_sha256\":\"fcfe2960fd854f05e1a378e736b1b8a59845c93e6ddeaaa04a9363d96ce9c062\",\"changed_files\":[\"docs/CHANGELOG.md\",\"docs/STATUS.md\"],\"changed_files_count\":2,\"changed_files_sha256\":\"3cea07406a6183a6b4bee92b049c5db0ea2a01ea35b2637ba2828cc3a1d3f749\",\"dirty\":true,\"observed_head\":\"aea9e758baac88c310319f34a77f94f2364b0c11\",\"qa_contract_version\":2,\"reason\":\"Main-authorized engineering completion with three main-authored test portability fixes and two exact fixture hash-pin updates. Fresh independent DeepSeek inspection, trusted unit/browser execution, read-only QA and final review cover the resulting candidate; Builder changes factual documentation only. Prior PR1 Linux CI failure remains retained. GitHub E2E stays PENDING until actual protected native merge.\",\"review\":{\"sha256\":\"7b2915d5728da725c044906d1f130cda2700d2eae4858f62f135b443b7387985\",\"status\":\"APPROVED\"},\"source_head\":\"aea9e758baac88c310319f34a77f94f2364b0c11\",\"task_id\":\"944c3ccd-603c-4f23-af8e-d4e9de4dd0d9\",\"tests\":[{\"command\":\"python -B scripts/lads_stage3.py verify-unit automation ../../qa-unit-current.json\",\"exit_code\":0,\"status\":\"completed\"},{\"command\":\"python -B scripts/lads_stage3.py verify-unit knowledge ../../qa-unit-current.json\",\"exit_code\":0,\"status\":\"completed\"},{\"command\":\"python -B scripts/lads_stage3.py verify-broker ../../qa-broker-current.json\",\"exit_code\":0,\"status\":\"completed\"}],\"unit_evidence_sha256\":\"8487a6fd089231df700d1676d33a27e8010d715d750d7e19f272d5f2052bc962\",\"working_content_commit\":null}"
+- component: "lads-stage3"
+<!-- /lads-automation:event -->
