@@ -312,3 +312,52 @@ Scanner/Reviewer独立只读会话权限预检因请求超时未完成，未派�
 - 正常提交并推送代码归档07db71e05ab35cf3c1bcb8326a9a79da605711c5，私有origin/main同SHA；121个远程文件对象与本地一致。报告/状态补记另做第二次正常提交；最终main SHA见Git和交付消息。
 - 本轮通过29 JS语法、3 Python编译、4 TOML/3Skill头部、静态产物59文件哈希、15路由/4宽度/8卡隔离冒烟及8组模拟服务；页面控制台错误为空，空来源不写业务键。核心文档与配置齐全，无已跟踪私有文件/凭据模式命中。
 - 不改业务源码或真实数据，不部署、不强推；完整范围、独立备份、限制与后续见[LIFEOS_GITHUB_SYNC_REPORT](LIFEOS_GITHUB_SYNC_REPORT.md)。历史测试不累加，真实个人恢复/真机和未来AI仍未完成。
+
+### 2026-11-05 LADS Stage 4 Build 1
+
+- 当前任务：`5fbe8834-26e6-4b78-84fb-af5dc1786766`；Source HEAD `aea9e758baac88c310319f34a77f94f2364b0c11`；独立 Builder worktree，外层备份 receipt 已核验。
+- 工程范围：修复 critical 风险不可豁免、controller/CI 凭据与历史规则一致性、精确路径/raw SHA/rule 豁免、PWA LF/CRLF 原始 pin；同步新增 smoke 与工程文档，不改产品存储/schema/auth。
+- 已实际运行修复前 automation 171 tests、knowledge 38 tests，目标回归 13 tests，均 OK；修复后全量 automation 174 tests、knowledge 38 tests 均 OK，全出站 release audit 为 0 critical。
+- AST 与 YAML embedded Python 解析通过；独立 QA/sealed broker 和 Reviewer 最终 Diff 审查仍待执行。
+- 未执行：commit、push、PR、GitHub CI、merge、deploy、真实多用户认证/产品 AI。Live GitHub E2E 为 PENDING；没有远程编号或人工审查可报告。
+
+### 2026-11-05 LADS Stage 4 v2 unit QA adaptation
+
+- Scope: controller-owned unittest execution, strict unit report/context verification, Stage3 v2 read-only command expansion, delivery binding, and Stage4 release revalidation. Browser broker v1, product storage/schema/auth, model routing/profiles/keys, and parent counters are unchanged.
+- Implemented files: `lads_automation/unit_qa.py`, `lads_automation/team.py`, `scripts/lads_stage3.py`, `lads_automation/delivery.py`, `lads_automation/github_release.py`, and the four allowed automation test files; current engineering docs were appended.
+- Final actual tests on this candidate: automation `185 tests / OK / exit 0` (rerun after the final reparse/containment regression); knowledge `38 tests / OK / exit 0` in 13.880s. Focused v2/release suite: `30 tests / OK / exit 0`. `ast.parse` passed for all nine changed Python/test files.
+- Unit evidence distinguishes actual exit-one failures from setup/timeout/malformed-output infrastructure errors, records full unittest counts, rejects skips, and requires unchanged original and working-copy inventories.
+- Not yet verified: bootstrap `qa-unit-current.json`/context receipts, independently executed three QA v2 commands, final Reviewer Diff approval, commit/push/PR/CI/merge/deploy, and Live GitHub E2E. No remote or release success is claimed.
+
+### 2026-11-05 LADS Stage 4 v2 native release ordering
+
+- Task `0502f178-5a54-41d2-8b7c-e7d7bce47e3a`, Builder build 1, Source HEAD `aea9e758baac88c310319f34a77f94f2364b0c11`. Controller backup receipt was checked against all seven allowed files before editing.
+- Implemented the narrow local release-controller correction: workflow contexts require exact GitHub Actions check runs, controller success stays absent or pending through native auto-merge registration/read-back, and a second PR/review/protection/workflow check precedes the exact bound controller success.
+- Actual focused test: `python -B -m unittest tests.automation.test_github_release -v`, `61 tests / OK / exit 0`; stdout-only `ast.parse` passed for `lads_automation/github_release.py` and `tests/automation/test_github_release.py`.
+- Not yet verified: trusted full unit/browser execution, the three prescribed independent v2 QA commands, final Reviewer Diff approval, document/index receipts, commit/push/PR, GitHub CI, native auto-merge, merge, deployment, or Live GitHub E2E. All remote/release claims remain PENDING.
+
+### 2026-11-05 LADS Stage 4 v2 native release ordering, build 2
+
+- Current task `0502f178-5a54-41d2-8b7c-e7d7bce47e3a`, Builder build 2, Source HEAD `aea9e758baac88c310319f34a77f94f2364b0c11`. Only the release controller, its focused test module, and the approved engineering documentation paths were changed.
+- The local release path keeps exact GitHub Actions success for the three workflow contexts separate from `LADS / controller`, registers and reads back native auto-merge only while controller success is absent or pending, rechecks all remote prerequisites, and posts the bound controller success last. Exact-success recovery now requires both durable LADS intents.
+- Current build-2 focused test: `python -B -m unittest tests.automation.test_github_release -v`, `63 tests / OK / exit 0`; stdout-only `ast.parse` passed for both changed Python files.
+- Prior build-1 QA remains a recorded failure: all three prescribed verifier commands exited 1 because the managed unit receipt was absent or mispathed, and the sealed browser report marked the ideas save/edit edit assertion unsuccessful. Build 2 does not claim QA PASS.
+- Not yet verified: trusted full unit/browser execution, the three prescribed independent v2 QA commands, final Reviewer Diff approval, document/index receipts, commit/push/PR, GitHub CI, native auto-merge, merge, deployment, or Live GitHub E2E. All remote/release claims remain PENDING.
+
+### 2026-11-05 LADS Stage 4 v2 native release ordering, build 3
+
+- Current task `0502f178-5a54-41d2-8b7c-e7d7bce47e3a`, Builder build 3, Source HEAD `aea9e758baac88c310319f34a77f94f2364b0c11`, source snapshot `f07fbb65349148f082ddbcf0a9151e1c11c4b40248909c64ebbf320df9ab7bdf`. The controller backup manifest matched all seven allowed paths before this documentation append.
+- The candidate retains exact GitHub Actions check-run gating for the three workflow contexts, keeps `LADS / controller` absent or pending through native auto-merge registration/read-back, repeats PR/head/review/protection/workflow checks, posts the exact bound controller success last, and requires all four checks plus durable native evidence during merge polling.
+- Actual build-3 focused test: `python -B -m unittest tests.automation.test_github_release -v`, `63 tests / OK / exit 0` in 87.045s. Stdout-only `ast.parse` passed for `lads_automation/github_release.py` and `tests/automation/test_github_release.py`.
+- The most recent independent QA remains FAIL: both prescribed unit verifier commands exited 1 because `../../qa-unit-current.json` was absent, while the broker verifier exited 0. This build does not convert that result to PASS.
+- Current trusted full unit/browser execution, independent v2 QA, final Reviewer Diff approval, document/index receipts, commit/push/PR, GitHub CI, native auto-merge, merge, deployment, and Live GitHub E2E remain PENDING. No remote or publication success is claimed.
+
+### 2026-11-11 Main-authorized portability correction
+
+Main-authored five-path correction refreshed only three portability tests (`test_native_entrypoint.py`, `test_qa.py`, and `test_orchestrator.py`) and the two matching raw SHA pins in `lads_automation/github_release.py` and `.github/workflows/security.yml`; the production native guard, broker protections, permission verification, product data, and security rules are unchanged, and no exemption path, pattern, or waiver was added. PR1 remains open and unmerged; its Linux CI run 42996932856 recorded 196 automation tests with two failures and one error while Security and Docs passed, so that failure remains retained. Main reported an actual native Linux copy passed automation 197, knowledge 38, and LADS 89 with one explicitly Windows-only skip; the prior Windows LADS 89 pass and final Windows rerun remain main-recorded. Main implementation and independent verification are distinct; the earlier QA approval for doc candidate 94785789-d279-4a2d-bf53-d105dfe4e689 was not accepted, published, or reused after supplemental Linux tests. Fresh independent QA on this candidate, actual GitHub CI on the corrected head, and native merge remain pending until their receipts; this is not a product permission change, Linux full-suite claim, merge, deployment, or Live GitHub E2E success.
+
+### 2026-11-11 LADS CI PWA directory correction
+
+Task `a279d5e4-a5e5-4a5a-b1cf-369508d7b0c5` had passed independent QA and final review before actual PR2 GitHub CI run 43005744900. That run passed automation 197, knowledge 38, LADS 89 with one Windows-only skip, JavaScript syntax, PWA build/check, Security, and Docs, but failed browser Service Worker activation; PR2 remains open and unmerged, and every earlier failed run remains retained unchanged. The failure was an engineering CI subject-selection issue: the build step regenerated `sw.js` in its unique isolated repository copy while the browser step served the original checkout's stale generated precache.
+
+Main replayed exact commit `2cad265f654b3bece9792babb8c40c0e329f7d67` with `git archive` in a private copy. The unchanged browser harness reproduced the failure with 31 digest mismatches; after the existing PWA build and checker ran in that copy, all mismatches were removed and the unchanged harness passed all 14 checks, including `offline-pwa`. The Linux notes API contract also passed with FakeNotion and no remote personal data. The source correction only changes `.github/workflows/ci.yml` and `tests/automation/test_github_release.py`: CI exports the existing unique build copy through `GITHUB_ENV` as `LADS_PWA_TEST_ROOT`, and the browser step changes into that exact root after tool setup and before executing the unchanged harness. The regression verifies the exported root, build working directory, and browser working-directory order. Cross-platform portability tests and exact synthetic-fixture hash pins are retained; the regression accepts truthful PENDING/BLOCKED/PASS document declarations, while Docs still requires actual PR, four successful checks, and merge evidence for PASS. Digest verification, Service Worker and browser assertions, required checks, branch protection, production source, and the browser harness were not weakened or otherwise changed. Fresh independent QA on this document candidate, actual post-fix GitHub CI, PR2 merge, deployment, and Live GitHub E2E remain pending; no Linux CI, merge, or deployment success is claimed.

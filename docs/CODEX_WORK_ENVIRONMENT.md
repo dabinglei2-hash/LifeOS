@@ -548,3 +548,16 @@ Codex 的工作必须遵循：
 Scanner/Reviewer独立只读会话权限预检因请求超时未完成，未派发该角色或宣称隔离生效；用户明确允许本轮由主控扫描、文档维护、Diff复核及正常提交推送。配置TOML和Skill frontmatter可解析，不等于Agent端到端运行验收。此为本轮例外，不改AGENTS默认规则。
 
 当前本地模块/PWA/Notion代理有代码证据；邀请账号、跨用户隔离、DeepSeek、AI记忆、三个产品AI工具、SSE与APScheduler仍未开始实现。实际检查、未测项、版本和下一步见[同步报告](LIFEOS_GITHUB_SYNC_REPORT.md)、[扫描报告](LIFEOS_PROJECT_SCAN_REPORT.md)及[更新记录](CHANGELOG.md)。历史“本次仅七文档/未提交”等段落只描述其原任务。
+
+## 2026-11-05 Stage 4 隔离工作区
+
+Builder 只在本任务独立 Git worktree 的精确 allowlist 内写入；主控在 worktree 外预先生成备份及哈希回执，Builder 不另建备份、缓存、日志或 pyc。修改前核验 HEAD、工作区清单、Scanner 报告、Reviewer APPROVED 和备份回执；未授权路径出现缺陷时报告主控，不扩宽范围。
+
+运行 Windows 命令时明确使用 PowerShell，并采用 UTF-8 输出；Python 使用 `-B`，语法检查使用内存中的 `ast.parse`。worker 不提交、推送、整合、部署、安装依赖或读取凭据/个人数据。当前 GitHub E2E 未执行，任何远程 ID 或 human review 都必须来自真实平台证据。
+
+## 2026-11-05 Stage 4 controller-owned QA
+
+- The QA model remains read-only and receives exactly `verify-unit automation`, `verify-unit knowledge`, then the unchanged `verify-broker` command.
+- The controller, using the existing trusted RPC executor, runs the two exact unittest commands in a disposable copy. QA does not receive writable sandbox access, worker-defined commands, credentials, or network access.
+- A real PASS requires a valid sealed unit report/context pair, both completed suites at integer exit zero, positive test counts, zero failures/errors/skips, and unchanged source/working-copy inventories.
+- The prescribed three read-only commands are not replaced by Builder tests. Their independent execution, bootstrap artifact generation, final review, and any live GitHub run remain later gates.

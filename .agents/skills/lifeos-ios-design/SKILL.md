@@ -42,3 +42,49 @@ description: 为 Life OS 网站设计或改进 Apple 风格的简洁界面、移
 在可用的本地预览中检查主要流程，至少覆盖窄屏和桌面布局、键盘操作、状态反馈、文本溢出及本次涉及的表单。对比度采用项目适用的可访问性标准核验，不以“看起来像 iOS”代替可用性检查。
 
 涉及 iOS 特性的改动尽可能在 Safari/iPhone 上验证；只有桌面模拟时明确写“未在 iPhone 真机验证”。未运行预览不能声称视觉检查通过。交付说明改动页面、沿用的设计选择、验证范围与已知限制，必要时附预览或截图；不将示例数据呈现为用户真实记录。
+
+## Stage 3 applicability
+
+- Use this skill for mobile-first Life OS pages, sheets, controls, and PWA-facing interaction changes.
+- Preserve existing styles, routes, semantics, and data behavior.
+- Treat iPhone claims as unverified unless real Safari/device evidence exists.
+
+## Stage 3 steps
+
+1. Inspect the current markup, CSS variables, icons, and shared interaction helpers.
+2. Keep controls at least 44 by 44 CSS pixels and retain accessible names and focus.
+3. Check narrow, short, and desktop layouts, bottom-navigation overlap, reduced motion, and console errors.
+4. Keep all existing markup and behavior unless the approved scope explicitly changes one element.
+5. Record screenshots as private evidence and do not present them as model-readable public data.
+
+## Stage 3 safety and output
+
+- Do not rebuild the stack or remove navigation to improve layout.
+- Do not claim physical iPhone verification from Chromium emulation.
+- Output the viewport matrix, overflow results, interaction evidence, and unverified device limits.
+
+## Stage 3 acceptance
+
+Acceptance requires evidence for the affected viewport and interaction, preserved
+existing markup and behavior, accessible controls, no horizontal overflow or
+console error, and an explicit unverified-device limitation.
+
+## Safety
+
+Follow only the existing data, privacy, backup, permission, and no-real-data boundaries above; never weaken them for test convenience.
+
+## Output
+
+Report changed paths, actual evidence, backup and recovery location, residual risk, and every unverified or blocked check.
+
+## Acceptance
+
+Acceptance requires independent review, the prescribed commands with actual exit status, owner Private evidence for live checks, and preserved historical data.
+
+## Applicability
+
+Use this skill within its existing project role and the AGENTS-authorized task scope.
+
+## Steps
+
+Follow the role-specific procedure above; use the Stage 3 sections only for bridge, event, evidence, and acceptance clarifications.

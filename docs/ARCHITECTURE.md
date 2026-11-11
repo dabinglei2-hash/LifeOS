@@ -384,3 +384,18 @@ Get-ChildItem -File -Filter *.js | ForEach-Object {
 Scanner/Reviewer独立只读会话权限预检因请求超时未完成，未派发该角色或宣称隔离生效；用户明确允许本轮由主控扫描、文档维护、Diff复核及正常提交推送。配置TOML和Skill frontmatter可解析，不等于Agent端到端运行验收。此为本轮例外，不改AGENTS默认规则。
 
 当前本地模块/PWA/Notion代理有代码证据；邀请账号、跨用户隔离、DeepSeek、AI记忆、三个产品AI工具、SSE与APScheduler仍未开始实现。实际检查、未测项、版本和下一步见[同步报告](LIFEOS_GITHUB_SYNC_REPORT.md)、[扫描报告](LIFEOS_PROJECT_SCAN_REPORT.md)及[更新记录](CHANGELOG.md)。历史“本次仅七文档/未提交”等段落只描述其原任务。
+
+## 2026-11-05 LADS Stage 4 工程发布链
+
+`lads_automation/github_release.py` 是工程发布控制器，不属于产品运行时。它只接受已验收的 Stage 3 交付，验证本地/远端 Git 基线、真实角色回执、origin 规范化身份、文档 A→B→C、知识索引、逐文件原始 blob、活动 hooks 与 allowed native merge。索引提交和远端 SQLite 知识库与产品 localStorage/IndexedDB/JSON 完全分离。
+
+安全审查对 critical findings 独立阻断，调用方风险声明不能覆盖。CI `security.yml` 与控制器共享同一组凭据和历史命令规则，并对七个精确路径/原始哈希/规则组合保留有限豁免。`lads_automation/qa.py` 只接受一个或多个明确列出的原始 SHA-256；PWA 构建/检查脚本同时登记 Windows CRLF 与 Git LF 表示，报告仍以实际 raw bytes 绑定候选。
+
+## 2026-11-05 LADS Stage 4 v2 unit proof
+
+- `lads_automation/unit_qa.py` owns a separate v2 unit broker and verifier. `Stage3Orchestrator` runs the controller broker before QA, stores bounded unit metadata, and provides both actual unit and sealed browser evidence to final Reviewer.
+- Unit execution uses only the two existing unittest command strings from `qa.QA_TEST_COMMANDS`. The trusted `CodexJsonRpcExecutor` runs them against an exact isolated candidate copy with network disabled and writable roots limited to that copy plus disposable private temp/local-app-data directories.
+- The v2 report records ordered automation then knowledge rows with exact commands, process status, integer exit code, timeout/overflow flags, output digest, and parsed unittest counts. `ready=true` requires two completed zero-exit suites, positive test counts, no failure/error/skip, and unchanged original/working-copy inventories.
+- `scripts/lads_stage3.py verify-unit` resolves the exact managed QA build copy and adjacent report/context, rejects reparse or containment drift, recomputes the candidate inventory, and prints PASS only after full verification.
+- `delivery.py` preserves exact legacy parsing but binds v2 unit evidence into the QA/controller delivery receipts. `github_release.py` reloads the actual v2 receipt for new Stage4 releases, so a persisted boolean or Builder claim cannot satisfy the release gate.
+- The existing browser broker report schema and qa-context v1 contract are unchanged.

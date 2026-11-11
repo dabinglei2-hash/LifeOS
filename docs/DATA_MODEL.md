@@ -67,3 +67,9 @@
 Scanner/Reviewer独立只读会话权限预检因请求超时未完成，未派发该角色或宣称隔离生效；用户明确允许本轮由主控扫描、文档维护、Diff复核及正常提交推送。配置TOML和Skill frontmatter可解析，不等于Agent端到端运行验收。此为本轮例外，不改AGENTS默认规则。
 
 当前本地模块/PWA/Notion代理有代码证据；邀请账号、跨用户隔离、DeepSeek、AI记忆、三个产品AI工具、SSE与APScheduler仍未开始实现。实际检查、未测项、版本和下一步见[同步报告](LIFEOS_GITHUB_SYNC_REPORT.md)、[扫描报告](LIFEOS_PROJECT_SCAN_REPORT.md)及[更新记录](CHANGELOG.md)。历史“本次仅七文档/未提交”等段落只描述其原任务。
+
+## 2026-11-05 工程 SQLite 与产品数据边界
+
+LADS 的工程知识库、发布状态、事件日志和 receipt 元数据属于开发自动化数据；它们与 Life OS 产品用户的 localStorage、IndexedDB、健康/财务记录及 JSON v11 没有迁移、合并或自动同步关系。工程 SQLite 不保存产品正文、浏览器配置或个人备份。
+
+凭据只由受控工作进程的环境提供，不能进入授权文件、日志、发布状态、知识记录或 Git。2026-11-05 的审计修复新增精确路径、原始哈希和规则三元组豁免以及双换行表示 QA pin；这些是工程元数据，不是业务 schema，也不授权任何产品数据迁移或认证变更。

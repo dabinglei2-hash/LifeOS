@@ -50,3 +50,43 @@ description: 在 Life OS 中修改数据存储、导入导出、迁移、同步�
 按变更选择有意义的检查：旧数据读取、写入后重新加载、重复导入、迁移失败、离线重试、账户隔离和恢复。没有相关功能时不虚构测试。数量相同不能单独证明数据完整，应核实关键字段与关系。
 
 报告实际改动、受影响数据、备份/恢复状态、已运行的验证和剩余限制。失败或结果不明时停止后续危险写入，保留诊断证据，避免盲目重复迁移。不要把“代码已完成”写成“真实数据已安全迁移”。
+
+## Stage 3 applicability
+
+- Use this skill when QA metadata, journal receipts, import/export fixtures, or PWA cache behavior changes.
+- Separate product data from engineering receipts; use synthetic namespaces and preserve user records.
+- Record backup, validation, recovery, and unresolved risks. Acceptance requires actual command or file evidence.
+
+## Stage 3 steps
+
+1. Read AGENTS, the touched storage code, and the current tests.
+2. Identify the exact persistence boundary and whether writes are browser, journal, SQLite, or export files.
+3. Prefer existing transactional helpers and add only synthetic fixtures.
+4. Verify add, edit, delete confirmation, reload, duplicate handling, and recovery where applicable.
+5. Report implemented behavior separately from deferred live verification.
+
+## Stage 3 safety and output
+
+- Never read credentials or real personal data.
+- Never overwrite backups or install dependencies.
+- Output the affected paths, evidence, backup location, residual risk, and required next review.
+
+## Safety
+
+Follow only the existing data, privacy, backup, permission, and no-real-data boundaries above; never weaken them for test convenience.
+
+## Output
+
+Report changed paths, actual evidence, backup and recovery location, residual risk, and every unverified or blocked check.
+
+## Acceptance
+
+Acceptance requires independent review, the prescribed commands with actual exit status, owner Private evidence for live checks, and preserved historical data.
+
+## Applicability
+
+Use this skill within its existing project role and the AGENTS-authorized task scope.
+
+## Steps
+
+Follow the role-specific procedure above; use the Stage 3 sections only for bridge, event, evidence, and acceptance clarifications.
