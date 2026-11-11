@@ -1,3 +1,17 @@
+<!-- LADS_STAGE4_ACTUAL_ACCEPTANCE_20261111 -->
+## 2026-11-11 阶段 4 运行与恢复
+
+已验证入口为 `scripts/lads_stage3.py` 的 RUN/MAIN-ACK/ACCEPT 链路，以及 `scripts/lads_github.py publish/resume/status`。正式发布读取任务级 authorization、同一 run-root 和工程知识项目绑定。普通任务沿用已获授权策略；失败时保留原 intent、SHA、Task ID 与计数，再用同一授权有限续跑。
+
+本机 Git 直连曾发生 TCP 超时，随后只在发布子进程环境中沿用 Windows 已启用的本地代理。`HTTP_PROXY`/`HTTPS_PROXY` 用于 Git，`NO_PROXY` 为 `api.github.com,localhost,127.0.0.1`，使 GitHub API 直连。代理来自现有配置，标准 TLS 保持启用；实际恢复过程记录于本机 `work/lads-stage4-pwa-ci-20261111/`。
+
+普通任务应先确认最新远端 main，在隔离 worktree 中建立精确源码基线；旧用户开发分支和未提交内容继续保留。主控本轮例外不推广为默认写入或模型回退规则。[已验证 PR 3](https://github.com/dabinglei2-hash/LifeOS/pull/3)
+
+
+---
+
+以下保留原有历史记录。
+
 # Life OS — CODEX_WORK_ENVIRONMENT
 
 > 本次归档说明：2026-11-02已获用户授权同步代码/文档并正常提交推送；结果以[同步报告](LIFEOS_GITHUB_SYNC_REPORT.md)为准。下方“本次仅七文档/不提交”等描述属于此前任务范围，不构成永久开发限制。
@@ -561,3 +575,21 @@ Builder 只在本任务独立 Git worktree 的精确 allowlist 内写入；主�
 - The controller, using the existing trusted RPC executor, runs the two exact unittest commands in a disposable copy. QA does not receive writable sandbox access, worker-defined commands, credentials, or network access.
 - A real PASS requires a valid sealed unit report/context pair, both completed suites at integer exit zero, positive test counts, zero failures/errors/skips, and unchanged source/working-copy inventories.
 - The prescribed three read-only commands are not replaced by Builder tests. Their independent execution, bootstrap artifact generation, final review, and any live GitHub run remain later gates.
+
+
+<!-- LADS_STAGE4_DOC_ARCHIVE_EOL_RECOVERY_20261111 -->
+### 2026-11-11 文档归档的换行字节补验
+
+独立文档任务 `1ae3c016-8b6b-44e6-8c59-16af18b56fda` 因 Windows 新工作树和归档导出应用了换行转换，被可信文件的精确哈希校验拦截，未提交或推送。其 QA 与 Reviewer 失败记录保留，代码 PR 3 的真实通过结果保持有效。
+
+主控在隔离来源中以 `git cat-file blob` 读取已核实 main 的原始工程字节，逐文件确认只有换行差异后备份并恢复。测试内容、哈希固定值和权限边界保持原规则，再重新执行完整文档验收。此为来源准备恢复，旧历史 3 次代码返工与失败任务计数均保留。
+
+
+<!-- LADS_STAGE4_DOC_ARCHIVE_TEST_RECOVERY_20261112 -->
+### 2026-11-12 最终文档归档的源恢复与测试修正
+
+独立归档任务 `1ae3c016-8b6b-44e6-8c59-16af18b56fda` 的 QA/审查失败原样保留，实际构建 1 次、代码返工 0 次。Windows checkout/archive 换行转换会改变受校验文件字节，主控已备份并用 `git cat-file blob` 恢复 76 个工程路径及未修改的 `docs/LADS_AUTOMATION.md`，逐项确认仅换行差异；可信测试清单的七项校验恢复通过。
+
+主控另修正 `tests/automation/test_install.py` 的历史归档断言，按原安装清单验证四个候选的完整 SHA，不再依赖持续维护的当前 AGENTS/Skills。原安装清单、候选字节及生产安装器的 HEAD/源漂移拒绝测试保留。首次尝试校验历史前缀哈希失败，日志和尝试文件保留，未将其宣称通过。修正后的聚焦 12 项与主控完整 198 项通过，日志位于私有 `work/lads-stage4-document-archive-20261111/`。
+
+这次仅补充工程文档及一项测试。代码 PR3 已验证的合并结果继续有效，本归档在候选生成时仍须完成独立 QA/审查与 GitHub 门禁。既有三次代码返工、全部失败、用户未提交内容及产品数据均保留。

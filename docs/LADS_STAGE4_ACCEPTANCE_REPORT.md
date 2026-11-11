@@ -1,3 +1,69 @@
+<!-- LADS_STAGE4_ACTUAL_ACCEPTANCE_20261111 -->
+## 2026-11-11 当前验收已通过
+
+### 版本与真实结果
+
+| 项目 | 已核实结果 |
+| --- | --- |
+| 正式工作树 | `C:/Users/Administrator/.codex/worktrees/750c/Life OS`，共享 Git 仓库 `D:/CODEX/Life OS` |
+| GitHub | `dabinglei2-hash/LifeOS`，原有公开仓库 |
+| 任务 | `944c3ccd-603c-4f23-af8e-d4e9de4dd0d9` |
+| 任务分支 | `codex/944c3ccd-lads4-github-automation` |
+| 提交 | `4cd141dc2ee1c839d05bf80eb2ac3a068ffc8b01` |
+| 原生合并 | `2cecda7fc44d5a5458d08759d5540c3c665f876d` |
+| 状态 | release journal `MERGED`、ready=true；知识任务 `completed`，MERGED 事件已保存 |
+| 重复执行 | 同一授权 resume 返回同一合并，一条任务提交、一个 PR |
+
+真实 GitHub 已验证三个工作流与控制器状态成功，原生 Auto-merge 于控制器状态之前登记并持久化。合并后的 main 三项工作流再次成功。分支保护前后完全一致，用户原开发分支和未提交修改保留。[已合并 PR 3](https://github.com/dabinglei2-hash/LifeOS/pull/3)
+
+### 文件与职责
+
+本次归档 119 个工程文件，完整清单和 SHA 在本机 `work/lads-stage4-pwa-ci-20261111/outgoing-audit.json`，也可从 PR Files 查看。正式工作树整合了发布控制器、只读 QA 适配、相关 CLI 与测试共 15 个不同工程文件，业务 JS/CSS、个人记录和原有 JSON 结构保持原边界。
+
+| 文件组 | 实际作用 |
+| --- | --- |
+| `lads_automation/github_release.py`、`scripts/lads_github.py` | 精确暂存、授权、提交/PR、来源绑定、原生合并、恢复及回写 |
+| `lads_automation/unit_qa.py`、`delivery.py`、`team.py`、`qa.py`、`scripts/lads_stage3.py` | 可信固定单测执行、只读验证、真实交付绑定 |
+| `.github/workflows/ci.yml`、`security.yml`、`docs-check.yml` | 构建、测试、依赖/敏感内容审计和文档一致性；GITHUB_TOKEN 为 contents read |
+| `tests/automation/`、`tests/lads/test_orchestrator.py` | 发布、权限、回执、跨平台、PWA 目录与异常路径回归 |
+| 项目规范与进度文档 | 当前策略、架构、失败历史和验收事实 |
+
+主控按用户本轮例外完成三个测试夹具、两个精确哈希绑定及 CI 目录/回归修复。独立 DeepSeek 角色真实审查与验证，Builder 整理两份文档；没有把主控测试标作独立 QA。后续默认四角色规则继续生效。
+
+### 实际测试
+
+| 环境/证据 | 结果 |
+| --- | --- |
+| 当前正式工作树 automation | 198 项，exit 0 |
+| Windows knowledge / LADS | 38 / 89 项，exit 0 |
+| 原生 Linux 副本 | automation 197、knowledge 38、LADS 89，命令 exit 0；一项 Windows-only skip |
+| 新 CI 目录回归 | 新增一项，automation 总数 198 |
+| 独立 QA 执行器 | automation 198、knowledge 38、六套件 34 项检查，三条只读 verifier 均 exit 0 |
+| 实际 Git 树 PWA 回放 | 原始 31 项摘要不匹配且同样失败；重建后 0 不匹配，14 项浏览器检查全过，含离线 PWA |
+| Linux notes API | 合成 FakeNotion/本地服务合约通过，产品账号认证仍未实现 |
+| GitHub PR CI 与合并后 main CI | 三工作流均 success，controller success，原生 merged=true |
+| 工程备份恢复 | 新别名恢复，十张表全部原 ID 一致，原库保留 |
+| 历史保护 | 39 份旧记录和备份 SHA 全部一致，原累计 3 次返工保留 |
+
+### 失败、恢复与安全
+
+PR 1 的 Linux 单测失败、PR 2 的原始 PWA 测试目录失败均实际阻止合并。两个 PR 已关闭并保留分支，完整失败日志在本机证据目录。主控首轮补丁字符错误、首次备份比较的属性错误也已纠正并保留记录。各次连接/报告/代码返工分类继续独立计数。
+
+Git 直连超时后，发布进程沿用既有 Windows 本地代理；API 经 `NO_PROXY` 直连后恢复保护查询。同一授权续跑，没有另造提交或 PR。三个必需检查实际验证了官方 app、精确 SHA、workflow 文件/ID、run ID 和 check_suite_id。待上传文件安全检查没有 critical 命中；工程迁移脚本与工作流风险条目仍单独列于审计回执。
+
+备份包括 `backups/lads-stage4-main-20261111/`、`backups/lads-stage4-main-final-20261111/`、`backups/lads-stage4-installed-20261111/`、`backups/lads-stage4-pwa-ci-20261111/` 和 `backups/lads-stage4-pwa-ci-installed-20261111/`。工程数据库快照位于私有 knowledge 命名空间。
+
+### 范围与后续
+
+本次完成当前 Windows 环境中的受保护自动 GitHub 版本流程，并通过真实 Ubuntu GitHub CI。正式部署没有执行。真实用户 JSON 恢复、iPhone 实机尚未测试；产品多用户认证、产品 AI 工具权限和其他原有未实现能力保持原状态。
+
+后续普通任务按已授权策略和现有门禁自动运行；高风险操作仍需明确用户决定。当前旧开发分支继续保留未提交内容，新任务从已核实的远端 main 准备隔离工作区。
+
+
+---
+
+以下保留原有历史记录。
+
 # LADS 2.0 阶段 4 验收记录
 
 核验日期：2026-11-05（客户端日期）。**当前结论：BLOCKED，尚未启用自动研发发布流程。** 下列旧执行事件保留其原始 UTC 时间，不改写为本次核验日期。
@@ -70,3 +136,21 @@
 用户新授权主控直接修复工程代码与本地验收，覆盖此前“保持 BLOCKED、不继续”的决定，仅对本轮生效。历史失败和计数全部保留。发布控制器四项已知缺陷及备份/范围、诊断、分类计数、Windows执行问题已作本地修复；主控实际89/171/38项通过。独立四角色任务与正式发布仍待验证，没有独立审批、commit、push、PR或合并。详细范围和证据见 [本轮工程修复](LADS_ENGINEERING_REPAIR_20261105.md)。以下旧 BLOCKED 文字仍描述其原历史快照，不覆盖或改写。
 
 后续补验：本轮真实四角色合成任务 `26ebde50-faee-42c9-8a3d-5796d4c10514` 已完成八次 DeepSeek 调用、两次构建与一次代码返工；独立 QA 实际失败后通过，最终 Reviewer APPROVED，主控证据核验通过。其范围仅合成 `add.py`，并未独立审查全部发布工程代码。上段“独立任务待验证”描述补验前状态；原失败、原计数及首轮预检配置失败均保留。GitHub PR/CI/native merge 仍未执行，阶段4自动发布不启用。
+
+
+<!-- LADS_STAGE4_DOC_ARCHIVE_EOL_RECOVERY_20261111 -->
+### 2026-11-11 文档归档的换行字节补验
+
+独立文档任务 `1ae3c016-8b6b-44e6-8c59-16af18b56fda` 因 Windows 新工作树和归档导出应用了换行转换，被可信文件的精确哈希校验拦截，未提交或推送。其 QA 与 Reviewer 失败记录保留，代码 PR 3 的真实通过结果保持有效。
+
+主控在隔离来源中以 `git cat-file blob` 读取已核实 main 的原始工程字节，逐文件确认只有换行差异后备份并恢复。测试内容、哈希固定值和权限边界保持原规则，再重新执行完整文档验收。此为来源准备恢复，旧历史 3 次代码返工与失败任务计数均保留。
+
+
+<!-- LADS_STAGE4_DOC_ARCHIVE_TEST_RECOVERY_20261112 -->
+### 2026-11-12 最终文档归档的源恢复与测试修正
+
+独立归档任务 `1ae3c016-8b6b-44e6-8c59-16af18b56fda` 的 QA/审查失败原样保留，实际构建 1 次、代码返工 0 次。Windows checkout/archive 换行转换会改变受校验文件字节，主控已备份并用 `git cat-file blob` 恢复 76 个工程路径及未修改的 `docs/LADS_AUTOMATION.md`，逐项确认仅换行差异；可信测试清单的七项校验恢复通过。
+
+主控另修正 `tests/automation/test_install.py` 的历史归档断言，按原安装清单验证四个候选的完整 SHA，不再依赖持续维护的当前 AGENTS/Skills。原安装清单、候选字节及生产安装器的 HEAD/源漂移拒绝测试保留。首次尝试校验历史前缀哈希失败，日志和尝试文件保留，未将其宣称通过。修正后的聚焦 12 项与主控完整 198 项通过，日志位于私有 `work/lads-stage4-document-archive-20261111/`。
+
+这次仅补充工程文档及一项测试。代码 PR3 已验证的合并结果继续有效，本归档在候选生成时仍须完成独立 QA/审查与 GitHub 门禁。既有三次代码返工、全部失败、用户未提交内容及产品数据均保留。

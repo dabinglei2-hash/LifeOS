@@ -116,3 +116,13 @@ Stage 3 uses explicit controller commands and treats DeepSeek `worker_completed`
 两项此前未通过的验收现已实际通过，证据见 docs/LADS_STAGE3_ACCEPTANCE_REPORT.md。本机 OpenAI/gpt-6-astra 原生 Pre/Post/Stop 完成真实回合；DeepSeek 四角色八调用/两构建完成独立 UI QA、返工、最终批准和文档/索引交付。不要继续把旧 PENDING 当现状，也不要把合成 UI 验收扩称为全部业务或全部工程 Diff 已被独立审查。
 
 后续复杂任务继续按独立 DeepSeek 工作进程流程执行；本轮主控工程例外不自动推广。原生会话用 scripts/lads_session.py 正常加载/信任，外部 CLI 完成用 worker_completed，不伪造 SubagentStop。保持实际权限预检、不可变候选/审批绑定、私有测试、MAIN-ACK 和失败关闭，不自动提交推送部署。
+
+<!-- LADS_STAGE4_ACTUAL_ACCEPTANCE_20261111 -->
+## 2026-11-11 阶段 4 正常任务 GitHub 授权与门禁
+
+用户已授权普通开发任务自动创建隔离分支、提交、推送、创建 PR，并在全部质量门禁通过后使用仓库原生 Auto-merge。主控须核验真实 QA、独立 Reviewer APPROVED、MAIN-ACK、文档和知识回执、候选精确字节、GitHub 必需检查及现有保护。保持精确暂存、有限重试和幂等；高风险操作仍进入 BLOCKED/AWAITING_APPROVAL，正式部署继续单独授权。技术审批不能替代高风险用户授权。
+
+实际链路已在 [PR 3](https://github.com/dabinglei2-hash/LifeOS/pull/3) 验证，合并 `2cecda7fc44d5a5458d08759d5540c3c665f876d`，合并后知识回执和重复 resume 均通过。GitHub main 的四项必需检查、管理员保护及禁止强制推送/删除规则经前后比较一致。不得伪造人工 Review 或直接更新受保护 main。
+
+本轮 GPT 主控工程写入是用户明确例外，后续默认独立 DeepSeek Scanner、Reviewer、Builder、QA 流程继续生效。代码修复、主控测试、独立 QA、真实 GitHub CI 分别记载，旧失败与返工计数保留。当前旧开发分支及用户未提交修改保留；新任务先核验远端，再准备隔离 worktree 与来源基线。文档当前事实见 [阶段 4 报告](docs/LADS_STAGE4_ACCEPTANCE_REPORT.md)。
+

@@ -1,3 +1,21 @@
+<!-- LADS_STAGE4_ACTUAL_ACCEPTANCE_20261111 -->
+## 2026-11-11 阶段 4 已通过真实 GitHub 验收
+
+任务 `944c3ccd-603c-4f23-af8e-d4e9de4dd0d9` 已完成独立角色执行、主控验收、文档与知识索引交付、提交、推送、PR、真实 CI、原生 Auto-merge 及合并后知识回写。提交 `4cd141dc2ee1c839d05bf80eb2ac3a068ffc8b01`，合并 `2cecda7fc44d5a5458d08759d5540c3c665f876d`。三项工作流和 `LADS / controller` 全部成功，合并后的 main 三项工作流再次通过。重复 resume 返回同一合并回执，没有新增提交或 PR。[已合并 PR 3](https://github.com/dabinglei2-hash/LifeOS/pull/3)
+
+本轮代码修复由用户明确授权的 GPT 主控完成，独立 DeepSeek 角色核验候选及真实 QA，Builder 整理文档。默认四角色仍通过独立 `deepseek-flash` CLI profile 运行。旧失败、39 份历史记录和累计 3 次历史返工全部保留，失败 PR 1、2 已关闭并保留分支及完整日志。
+
+实际测试为 automation 198、knowledge 38、密封 broker 六套件与 34 项检查通过。Windows LADS 89 项全部通过，Linux LADS 89 项中一项 Windows PowerShell 测试按平台跳过。实际 Git 提交的 PWA 回放从 31 项摘要不匹配恢复为 0，未修改的浏览器 harness 通过全部 14 项检查，含离线 PWA。真实用户数据恢复、iPhone 实机尚未测试，产品真实多用户认证与 AI 权限继续保持原有未实现状态。
+
+正式开发分支仍保留原 HEAD 与未提交内容。发布使用独立任务分支；工作流、存储和个人记录按原边界保护。后续普通任务从核验后的 `origin/main` 准备隔离 worktree，再明确纳入获准修改。当前机器的 Git 发布进程沿用已启用的 Windows 本地代理，GitHub API 使用直连，标准 TLS 校验保持启用。
+
+当前结果优先于下方旧快照，旧 PENDING/BLOCKED 只代表其记录时点。完整证据见 [阶段 4 验收报告](LADS_STAGE4_ACCEPTANCE_REPORT.md)。
+
+
+---
+
+以下保留原有历史记录。
+
 # Life OS — DEVELOPMENT_PROGRESS
 
 > 本次归档说明：2026-11-02已获用户授权同步代码/文档并正常提交推送；结果以[同步报告](LIFEOS_GITHUB_SYNC_REPORT.md)为准。下方“本次仅七文档/不提交”等描述属于此前任务范围，不构成永久开发限制。
@@ -138,5 +156,18 @@ Scanner/Reviewer独立只读会话权限预检因请求超时未完成，未派�
 - summary: "Stage 3 delivery event: task_state_changed"
 - reason: "Main-authorized engineering completion with three main-authored test portability fixes and two exact fixture hash-pin updates. Fresh independent DeepSeek inspection, trusted unit/browser execution, read-only QA and final review cover the resulting candidate; Builder changes factual documentation only. Prior PR1 Linux CI failure remains retained. GitHub E2E stays PENDING until actual protected native merge."
 - details: "{\"candidate_sha256\":\"fcfe2960fd854f05e1a378e736b1b8a59845c93e6ddeaaa04a9363d96ce9c062\",\"changed_files\":[\"docs/CHANGELOG.md\",\"docs/STATUS.md\"],\"changed_files_count\":2,\"changed_files_sha256\":\"3cea07406a6183a6b4bee92b049c5db0ea2a01ea35b2637ba2828cc3a1d3f749\",\"dirty\":true,\"observed_head\":\"aea9e758baac88c310319f34a77f94f2364b0c11\",\"qa_contract_version\":2,\"reason\":\"Main-authorized engineering completion with three main-authored test portability fixes and two exact fixture hash-pin updates. Fresh independent DeepSeek inspection, trusted unit/browser execution, read-only QA and final review cover the resulting candidate; Builder changes factual documentation only. Prior PR1 Linux CI failure remains retained. GitHub E2E stays PENDING until actual protected native merge.\",\"review\":{\"sha256\":\"7b2915d5728da725c044906d1f130cda2700d2eae4858f62f135b443b7387985\",\"status\":\"APPROVED\"},\"source_head\":\"aea9e758baac88c310319f34a77f94f2364b0c11\",\"task_id\":\"944c3ccd-603c-4f23-af8e-d4e9de4dd0d9\",\"tests\":[{\"command\":\"python -B scripts/lads_stage3.py verify-unit automation ../../qa-unit-current.json\",\"exit_code\":0,\"status\":\"completed\"},{\"command\":\"python -B scripts/lads_stage3.py verify-unit knowledge ../../qa-unit-current.json\",\"exit_code\":0,\"status\":\"completed\"},{\"command\":\"python -B scripts/lads_stage3.py verify-broker ../../qa-broker-current.json\",\"exit_code\":0,\"status\":\"completed\"}],\"unit_evidence_sha256\":\"8487a6fd089231df700d1676d33a27e8010d715d750d7e19f272d5f2052bc962\",\"working_content_commit\":null}"
+- component: "lads-stage3"
+<!-- /lads-automation:event -->
+
+<!-- lads-automation:event {"doc":"docs/DEVELOPMENT_PROGRESS.md","id":"5ec1246f-178f-5627-92b2-0e6034bfd075","payload_sha256":"fe4405bc9829539e56074fcb1df92568a8145e3cb892fcf66bf6b6271a4f2001"} -->
+### LADS event 5ec1246f-178f-5627-92b2-0e6034bfd075
+
+- Task: `71bc6bb5-3087-42f5-92fd-3786e5ff9e05`
+- Event: `task_state_changed`
+- Recorded: `2026-11-11T18:25:48.271458Z`
+- QA/review verified: `true` (machine delivery receipt `{"acceptance_mode":"independent","authorization_sha256":null,"candidate_sha256":"e717bc19f81431af548f89ccecad0d6f1f82a7e98daa7fdd81aa940c3c113e25","controller_sha256":"5c9ccefbd4e405c52a6456e2a46ef6e6e7397375b0052c6b00aa070678cc0d6a","qa_sha256":"9f4054b2f1efd8353e4921873a02f30036e1a370f65aa69d6b854057138dfc64","reviewer_sha256":"1aff7fc266db187ae0ddf9ca98c5b2bd1928ad6db2a7800c4b1116625ce9f856","simulated":false}`)
+- summary: "Stage 3 delivery event: task_state_changed"
+- reason: "Main-authorized final acceptance archive following Code PR3 actual protected merge. Main prepared nine factual documents and one historical-install regression correction; archived candidates, production installer guards and historical counters remain unchanged. Fresh independent DeepSeek inspection, actual trusted test execution, read-only QA and final review cover this source and candidate. Builder appends factual STATUS/CHANGELOG only. The earlier docs-source EOL/QA/review failures remain retained. This separate archive publication is pending until its actual protected native merge; Code PR3 E2E PASS remains verified."
+- details: "{\"candidate_sha256\":\"e717bc19f81431af548f89ccecad0d6f1f82a7e98daa7fdd81aa940c3c113e25\",\"changed_files\":[\"docs/CHANGELOG.md\",\"docs/STATUS.md\"],\"changed_files_count\":2,\"changed_files_sha256\":\"3cea07406a6183a6b4bee92b049c5db0ea2a01ea35b2637ba2828cc3a1d3f749\",\"dirty\":true,\"observed_head\":\"2cecda7fc44d5a5458d08759d5540c3c665f876d\",\"qa_contract_version\":2,\"reason\":\"Main-authorized final acceptance archive following Code PR3 actual protected merge. Main prepared nine factual documents and one historical-install regression correction; archived candidates, production installer guards and historical counters remain unchanged. Fresh independent DeepSeek inspection, actual trusted test execution, read-only QA and final review cover this source and candidate. Builder appends factual STATUS/CHANGELOG only. The earlier docs-source EOL/QA/review failures remain retained. This separate archive publication is pending until its actual protected native merge; Code PR3 E2E PASS remains verified.\",\"review\":{\"sha256\":\"1aff7fc266db187ae0ddf9ca98c5b2bd1928ad6db2a7800c4b1116625ce9f856\",\"status\":\"APPROVED\"},\"source_head\":\"2cecda7fc44d5a5458d08759d5540c3c665f876d\",\"task_id\":\"71bc6bb5-3087-42f5-92fd-3786e5ff9e05\",\"tests\":[{\"command\":\"python -B scripts/lads_stage3.py verify-unit automation ../../qa-unit-current.json\",\"exit_code\":0,\"status\":\"completed\"},{\"command\":\"python -B scripts/lads_stage3.py verify-unit knowledge ../../qa-unit-current.json\",\"exit_code\":0,\"status\":\"completed\"},{\"command\":\"python -B scripts/lads_stage3.py verify-broker ../../qa-broker-current.json\",\"exit_code\":0,\"status\":\"completed\"}],\"unit_evidence_sha256\":\"cb13037de37ce4852c9b26f79684320c0583ded194bee2a7d950f0d35a5155db\",\"working_content_commit\":null}"
 - component: "lads-stage3"
 <!-- /lads-automation:event -->
