@@ -54,3 +54,11 @@ venv/
 *.db-shm
 .codex/sessions/
 .codex/logs/
+
+.lads-artifacts/
+.ci-pwa-dist-*/
+.ci-*/
+.integration-*/
+.migration-private/
+*.zip
+*.bundle

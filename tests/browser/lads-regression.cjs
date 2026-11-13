@@ -229,9 +229,11 @@ async function run() {
   await page.goto(`${base}/index.html#daily-notes`);
   await settle(page);
   await page.locator('#ideas-compose-open').click();
+  await page.waitForFunction(() => Boolean(window.LifeIdeasEditor.snapshot('new').revision), null, {timeout: 10000});
   await page.locator('#idea-rich-editor .ql-editor').fill('ASCII idea body alpha');
   await page.locator('#diary-form button[type="submit"]').click();
-  await page.waitForTimeout(100);
+  await page.waitForFunction(() => JSON.parse(localStorage.getItem('my-life-dashboard-personal-v1') || '{"diary":[]}').diary.some(item => item.content === 'ASCII idea body alpha'), null, {timeout: 10000});
+  await page.locator('#ideas-compose-dialog').waitFor({state: 'hidden'});
   let personal = JSON.parse((await storage(page))['my-life-dashboard-personal-v1'] || '{"diary":[]}');
   const idea = personal.diary.find(item => item.content === 'ASCII idea body alpha');
   let ideaDetail = false;
@@ -244,9 +246,11 @@ async function run() {
     const edit = page.locator(`[data-edit-note="${idea.id}"]`).first();
     if (await edit.count()) {
       await edit.click();
+      await page.waitForFunction(id => Boolean(window.LifeIdeasEditor.snapshot(id).revision), idea.id, {timeout: 10000});
       await page.locator('#idea-rich-editor .ql-editor').fill('ASCII idea body beta');
       await page.locator('#diary-form button[type="submit"]').click();
-      await page.waitForTimeout(100);
+      await page.waitForFunction(id => JSON.parse(localStorage.getItem('my-life-dashboard-personal-v1') || '{"diary":[]}').diary.some(item => item.id === id && item.content === 'ASCII idea body beta'), idea.id, {timeout: 10000});
+      await page.locator('#ideas-compose-dialog').waitFor({state: 'hidden'});
       personal = JSON.parse((await storage(page))['my-life-dashboard-personal-v1'] || '{"diary":[]}');
       ideaEdited = personal.diary.some(item => item.id === idea.id && item.content === 'ASCII idea body beta');
     }

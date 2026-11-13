@@ -1,0 +1,838 @@
+{
+  "schema": "lads-migration-review-scope-v1",
+  "source_head": "607fb7687e7966ef1acfad02c07e558625044d2c",
+  "repository": "dabinglei2-hash/LifeOS",
+  "main_authored": true,
+  "independent_approval": false,
+  "scope": "ALL listed prepared migration changes plus Builder acknowledgement; not business data or original source workspace",
+  "changes": [
+    {
+      "path": ".agents/skills/lifeos-data-guard/SKILL.md",
+      "git_before_sha256": "0dccff7c7780ac3c59b5801aa6338313805047b4c2fc55c295349c1bf991f928",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".agents/skills/lifeos-git-release/SKILL.md",
+      "git_before_sha256": "6e8161c3861307d51070743523887189311278666d0f1293d3654e3e5c12a3ef",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".agents/skills/lifeos-ios-design/SKILL.md",
+      "git_before_sha256": "6afbdf2be6392bb14a796aafd0c271c0afa0a2ff31875d6f5f30ecd763d1f148",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".agents/skills/lifeos-knowledge-sync/SKILL.md",
+      "git_before_sha256": "b4b0efaf2ac34878dd890c5cf94916b294e7bc7f7212688a4c6cb565a630c968",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".agents/skills/lifeos-project-memory/SKILL.md",
+      "git_before_sha256": "818d5f9d5e36f3a1f16a46608d4054e1b8492eeb3917ec16818cbb5cce2dfb23",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".agents/skills/lifeos-qa-testing/SKILL.md",
+      "git_before_sha256": "300a98eb56be6347eb4c45e0913bc216f567eeaf5f0c3fa941798d150d50186c",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".agents/skills/lifeos-release-management/SKILL.md",
+      "git_before_sha256": "36f90bd195225f9775c393c7744be05734319c6c6d93a12a31f8e0e96f915845",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".codex/agents/builder.toml",
+      "git_before_sha256": "e2b16ef6e62910689ad1cd99c280ca1731b31e531fc1e77c36773f1bf790c8e0",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".codex/agents/qa-tester.toml",
+      "git_before_sha256": "c232e6d5236842993de3dbda62fe68e74a00d323d3896ddf80cccb49bc5584ac",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".codex/agents/reviewer.toml",
+      "git_before_sha256": "c897a8d768af3099f750c6529054ef14b14e274879679a52a03370c7cb045b46",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".codex/agents/scanner.toml",
+      "git_before_sha256": "758fde7555c6464c3b0088df9b5ea5c104d5ce60c25775aec52786fe6884ab16",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".codex/config.toml",
+      "git_before_sha256": "af00171d0ae3470aa41fb82e4165d91e5871e912d635e7545f9dc8f4a7752fc9",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".codex/hooks.json",
+      "git_before_sha256": "01d5631d2d4f5843f2f18b2a8ce75f8b69df23fa3b13c58fc1ac7e144bbb2350",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".codex/worker-prompts/builder.md",
+      "git_before_sha256": "51ef89966aa533999f599ebc582089e5cdceaedbf1c50db95fdbe574b876f652",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".codex/worker-prompts/qa-tester.md",
+      "git_before_sha256": "06259d00ba949c22e44bcbbaca55d57fe018f6033535c1d7df2fee38ac400676",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".codex/worker-prompts/reviewer.md",
+      "git_before_sha256": "6a662a48e98656c99153b6adec9801a956134e3f499deaf4b8b909c8f6315fb6",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".codex/worker-prompts/scanner.md",
+      "git_before_sha256": "b997c8bc8d867e09b4217f7ed4bb53b16d2f1be6c91bc19959c0477b010f5075",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "git_before_sha256": "ef8241218deb81630f2b11900caf58451b286c94dd016f1a644b0dcc8e38f078",
+      "source_after_sha256": "6b157611f3c11b956e237a88e97058df54fbed89403abda2981dcda35b443b3d",
+      "kind": "modified"
+    },
+    {
+      "path": ".github/workflows/docs-check.yml",
+      "git_before_sha256": "daaa1c6f5aefb996b94f13992ff1e995f5bd374c66247cf3e728a520db3c86c0",
+      "source_after_sha256": "f110c43258772a781ff9bff6dcd09aa78785808c6df47bef1d57cbbb34184653",
+      "kind": "modified"
+    },
+    {
+      "path": ".github/workflows/production-deploy.yml",
+      "git_before_sha256": null,
+      "source_after_sha256": "caf3b288a7876710a423cb1e2d5ea62751c1f8dc4a396d089868fa81610737b4",
+      "kind": "added"
+    },
+    {
+      "path": ".github/workflows/security.yml",
+      "git_before_sha256": "bd09e6693c928b2a227e37a03f89aad37aa27fcec601b389885e3ae444005be0",
+      "source_after_sha256": "dd4cac45eb6fe0e189fdd9682b1fcc76c1a94ff89463ad5d70685511a44071e3",
+      "kind": "modified"
+    },
+    {
+      "path": ".github/workflows/staging-deploy.yml",
+      "git_before_sha256": null,
+      "source_after_sha256": "26e19a8f46aed33398e5f8a4b585c67f64997b492d5943b4736d6a280342b959",
+      "kind": "added"
+    },
+    {
+      "path": ".gitignore",
+      "git_before_sha256": "6d8cfdbfbbd067533cc1b0e435638ff4439e6a5e622708b8dae51a03ca1ba906",
+      "source_after_sha256": "4caed5a933ca58fb4dcdf8d06c050a4880d914a109461c9c75cd28b335380549",
+      "kind": "modified"
+    },
+    {
+      "path": ".openai/hosting.json",
+      "git_before_sha256": "5ecef5a204ecd768173ddc2f02a3583dedacf1bcd9a79db618fb6ee59fd1dcc1",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "AGENTS.md",
+      "git_before_sha256": "3b3d167058cbd437f63ce6e49cbc3df3ef1f3191552055cd5c6e0ef0b112d776",
+      "source_after_sha256": "13fe55e6d65e052658c46be248fa8f6f980da3318d3ad3ac7ff99b19ca18b383",
+      "kind": "modified"
+    },
+    {
+      "path": "README.md",
+      "git_before_sha256": "7e37c161674c178d2095712e79309de043235f41e4dd3d4e06b622d85b543fe2",
+      "source_after_sha256": "f4db2ea8f54eb562e800a0c30bd34dc1020c844c522ddbc956d65084a4624ea5",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/AI/AGENT_COMMUNICATION.md",
+      "git_before_sha256": null,
+      "source_after_sha256": "58c76aff08538fd244f720b17b36c7ed88e4d1ac9d2b3dac394b45dfa1dbad8c",
+      "kind": "added"
+    },
+    {
+      "path": "docs/AI/AGENT_PERMISSIONS.md",
+      "git_before_sha256": null,
+      "source_after_sha256": "87f058744b6fcf40c29e589f93644cbd3f0293a2958913ebcabfabc56492efe9",
+      "kind": "added"
+    },
+    {
+      "path": "docs/AI/AGENT_ROLES.md",
+      "git_before_sha256": null,
+      "source_after_sha256": "e9afdc4fa68364492bc0f449328dc36fcae8a9f092cfaeb5cecb8a0cc0301561",
+      "kind": "added"
+    },
+    {
+      "path": "docs/AI/AI_ARCHITECTURE.md",
+      "git_before_sha256": null,
+      "source_after_sha256": "2e1a203c31aa5adf27ea85109558c06310bd148df7514a887ee1a8f21bd7d98e",
+      "kind": "added"
+    },
+    {
+      "path": "docs/AI/AI_RUNTIME_RULES.md",
+      "git_before_sha256": null,
+      "source_after_sha256": "9e4776c7e150de7eae8706543ab836b507a3720d6c3e65d620ddb4b9240b10b6",
+      "kind": "added"
+    },
+    {
+      "path": "docs/AI/DELIVERY_REPORT.md",
+      "git_before_sha256": null,
+      "source_after_sha256": "a08deee809792670f3d2f6c35a6d0195007519eeffc2aa3a5d924c8181024bc6",
+      "kind": "added"
+    },
+    {
+      "path": "docs/AI/MEMORY_AND_DATA_ARCHITECTURE.md",
+      "git_before_sha256": null,
+      "source_after_sha256": "7a530737c57ce02c43a04b290d0d6a8a7aae1ab620bb84b0a0e5a224fa527b8d",
+      "kind": "added"
+    },
+    {
+      "path": "docs/AI/PROACTIVE_AGENT.md",
+      "git_before_sha256": null,
+      "source_after_sha256": "08917c08ea64f4692e8c6b3194a39932d4c1d71ea970d0205efd315c7eeeb503",
+      "kind": "added"
+    },
+    {
+      "path": "docs/AI/README.md",
+      "git_before_sha256": null,
+      "source_after_sha256": "810cb5a8fe90f3d7a89941b767f6b373a2e49d8eae1417ebd4a88a9d73a3c939",
+      "kind": "added"
+    },
+    {
+      "path": "docs/AI_AGENT_SPEC.md",
+      "git_before_sha256": "b25459a310fe73c618f274ba47bcc0c9fe923a2f63fae375dd31927ac749898e",
+      "source_after_sha256": "934711b9523cee80d19d53f424f5a0b99ce15dcebb7487752a527d6a21e34fe6",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "git_before_sha256": "e8731e3618828714128f489b29e73feb4110b01bca38b1a546521defbbcae7c7",
+      "source_after_sha256": "93c723ba4c6682dd1b30cbfc9d0d3d236c1f6529f617f777dd88c6ebff4a0ef0",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/CHANGELOG.md",
+      "git_before_sha256": "da2461ef842dd9d049882b5620ad7ab542e1d247f499801d36ef927f8fdcb4b3",
+      "source_after_sha256": "14e63c98d0452bb491cdc5aae95ff1b9c0aa2b15408fa3efbf9916826e6ccaef",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/CODEX_MODEL_ROUTING.md",
+      "git_before_sha256": "aa83a8971dfd94d1dffa1f372b70bd7fbc90be363673b2646dc0e4f8c15f0a30",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "docs/CODEX_TECH_STACK_AND_TOOLING.md",
+      "git_before_sha256": "a4eb2ef9faa4fc3902032aa2d7e1ada522b87849e3806906c77da0f9098c504d",
+      "source_after_sha256": "934711b9523cee80d19d53f424f5a0b99ce15dcebb7487752a527d6a21e34fe6",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/CODEX_WORK_ENVIRONMENT.md",
+      "git_before_sha256": "13261468f085134127552898acc515bbd0839a489e49c2abbeb968af2c0ce9c1",
+      "source_after_sha256": "934711b9523cee80d19d53f424f5a0b99ce15dcebb7487752a527d6a21e34fe6",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/DATA_MODEL.md",
+      "git_before_sha256": "d8fc13780c53687b9c37c2f10f008fbb18cfea1b0dfbc3a9653d31173561dc5b",
+      "source_after_sha256": "57cdef91dc24213ad11e95d5f704c6743190209f2009256ad632f78d43798110",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/DEEPSEEK-FLASH-ACCEPTANCE-20261102.md",
+      "git_before_sha256": "42b45c8773406294fd9315c742f6ff1fa14658176aae013198ee78d5cae3458d",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "docs/DEEPSEEK-VALIDATION-20261102.md",
+      "git_before_sha256": "77736dee388ba28a3ee21030c9b6c479b7ddc39bd5e08af6bc3de305271d6102",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "docs/DEVELOPMENT_PROGRESS.md",
+      "git_before_sha256": "9ba83731143b08102dd718f9cb9023f33648bc9e5c4a64cbc98a408cf18b092e",
+      "source_after_sha256": "0c60b6a625ca3c0876d727cb92753cd920047f5d10f90e3372d77c53a01c2a14",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/DUAL_REPOSITORY_MIGRATION_REPORT.md",
+      "git_before_sha256": null,
+      "source_after_sha256": "eff6a2694e8456c7c636b10af16e0eb57f256409ae8b3635010b021575d233ef",
+      "kind": "added"
+    },
+    {
+      "path": "docs/KNOWN_ISSUES.md",
+      "git_before_sha256": "52bda37894c81608fed9a436de7d9eec7cfa3d9d842aa7174a4f0e729c353c2b",
+      "source_after_sha256": "40fdd1db48bcb40d4c05b60a708110f562eb74462ac526ef3953a0799a09a43e",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/LADS-STAGE1-REPORT.md",
+      "git_before_sha256": "525a0257d0adc035b745f927ee6f97fbf0905241df7d00a1a86be67fec580c75",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "docs/LADS_AUTOMATION.md",
+      "git_before_sha256": "ef6d071f36fb69c0ac2035ffce9141bd1dde3935b9ed20fed5c08b8f904c35c5",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "docs/LADS_ENGINEERING_REPAIR_20261105.md",
+      "git_before_sha256": "32125203aa58cf5500b8ac605bff01fa117f8dcf7c102b6ddb1bff765a29d725",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "docs/LADS_GITHUB_AUTOMATION.md",
+      "git_before_sha256": "fc2d931bd96de827eaf1d76d8f99ca082bad2d69306985e7100e157675c09bd2",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "docs/LADS_KNOWLEDGE_DB.md",
+      "git_before_sha256": "0ab16b22adb9b999f8dc35bad756f6dfae84622ea2688c45653e2f7b998aed5f",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "docs/LADS_ORCHESTRATOR.md",
+      "git_before_sha256": "a4caeff67db37b3e9be9d3fe406a74e8668a8e0541f573a2f93ddcd8c085eab6",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "docs/LADS_RELEASE_SMOKE.md",
+      "git_before_sha256": "13b50f2acdb1221ab1eb4d701a64bf373b83bf4bb3f519dda1d43a57f5c308be",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "docs/LADS_STAGE3_ACCEPTANCE_REPORT.md",
+      "git_before_sha256": "9499363330a5dd8bf13bc793b23ad5e7174e5118f0ca1940290229b9119cb98a",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "docs/LADS_STAGE4_ACCEPTANCE_REPORT.md",
+      "git_before_sha256": "f8e17fbab933f73d11db9541cc03814fd022d4e36afb40b432a68c19f9e2c167",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "docs/LIFEOS_GITHUB_SYNC_REPORT.md",
+      "git_before_sha256": "3bf5c6c3a790c1773ec3e67c38cfc400c0211d64abcf12bdd5cb957095c6ade4",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "docs/LIFEOS_PROJECT_SCAN_REPORT.md",
+      "git_before_sha256": "fbee41f464ccb7520de8e854bb9838866d0f5ab9767225ca599b14dc57e46461",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "docs/MIGRATION_FILE_OWNERSHIP.json",
+      "git_before_sha256": null,
+      "source_after_sha256": "24c9367fc7cacfdf5abbc2241fed7504eb8d8263f2b3970864f6c3528cd083d9",
+      "kind": "added"
+    },
+    {
+      "path": "docs/MIGRATION_TEST_EVIDENCE.json",
+      "git_before_sha256": null,
+      "source_after_sha256": "f4b2c8b55776ed9310ff09a3ffd512dcd23137240801bd09871916679a2aca06",
+      "kind": "added"
+    },
+    {
+      "path": "docs/PRD.md",
+      "git_before_sha256": "039d61a35138f38fedeb33924907330914205a6367a865269554afbb694c11e7",
+      "source_after_sha256": "cb74f79844988af48bc453a58f4b550388e03a78e5c95f4e1cc8bd603353493a",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/STATUS.md",
+      "git_before_sha256": "f0069e26cabcdce9f44c0994a73908fba6d11cdae89e86c745d53b0093d4c096",
+      "source_after_sha256": "5dc006446fbf31e7004049e9ca13ad74622a800974b1cb961606784e991cdbe6",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/TASK_HISTORY.md",
+      "git_before_sha256": "76f2d198b021ab84127f8d5fec9ff3bc5e83f12a36bceddd17d6e4a939a3fa06",
+      "source_after_sha256": "e1255446ad03770d7a6b9643cb387f306fd35a536f43f529f44dc68425bb476e",
+      "kind": "modified"
+    },
+    {
+      "path": "engineering/lads-protocol-fix/install-map.json",
+      "git_before_sha256": "ad7fb6b5f11ab1074e20c45af188b4a5067a31a93b0daff38fb1c4b3963126f7",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "engineering/lads-protocol-fix/lads_orchestrator.py",
+      "git_before_sha256": "7cbf50257826a447875486a76e8d1a10b0c106f312fcab6ff6d142a6345c3d93",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "engineering/lads-protocol-fix/lifeos-deepseek.py",
+      "git_before_sha256": "6fc72b898ba9de84950e0f0f0f794c1be1bc0de2aa79ba750a5470c22f0b3c96",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "engineering/lads-stage3-install/AGENTS.md",
+      "git_before_sha256": "b158e00c2f4e475954c4408f50258a6efac4337e534cb17e71094da9953d6c2b",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "engineering/lads-stage3-install/hooks.json",
+      "git_before_sha256": "01d5631d2d4f5843f2f18b2a8ce75f8b69df23fa3b13c58fc1ac7e144bbb2350",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "engineering/lads-stage3-install/install-map.json",
+      "git_before_sha256": "131e5b97777d308c99b8faf88027350055614dba81a068c0f53d48652971b2dd",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "engineering/lads-stage3-install/skills/lifeos-data-guard/SKILL.md",
+      "git_before_sha256": "0dccff7c7780ac3c59b5801aa6338313805047b4c2fc55c295349c1bf991f928",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "engineering/lads-stage3-install/skills/lifeos-git-release/SKILL.md",
+      "git_before_sha256": "6e8161c3861307d51070743523887189311278666d0f1293d3654e3e5c12a3ef",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "engineering/lads-stage3-install/skills/lifeos-ios-design/SKILL.md",
+      "git_before_sha256": "6afbdf2be6392bb14a796aafd0c271c0afa0a2ff31875d6f5f30ecd763d1f148",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "engineering/lads-stage3-install/skills/lifeos-knowledge-sync/SKILL.md",
+      "git_before_sha256": "b4b0efaf2ac34878dd890c5cf94916b294e7bc7f7212688a4c6cb565a630c968",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "engineering/lads-stage3-install/skills/lifeos-project-memory/SKILL.md",
+      "git_before_sha256": "818d5f9d5e36f3a1f16a46608d4054e1b8492eeb3917ec16818cbb5cce2dfb23",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "engineering/lads-stage3-install/skills/lifeos-qa-testing/SKILL.md",
+      "git_before_sha256": "300a98eb56be6347eb4c45e0913bc216f567eeaf5f0c3fa941798d150d50186c",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "engineering/lads-stage3-install/skills/lifeos-release-management/SKILL.md",
+      "git_before_sha256": "36f90bd195225f9775c393c7744be05734319c6c6d93a12a31f8e0e96f915845",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "engineering/lads-stage3-install/tests/lads/test_orchestrator.py",
+      "git_before_sha256": "3b971770d38f7af2e3a63f23ab7ee4095676d12b35516b44b0afc943011eca5c",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_automation/__init__.py",
+      "git_before_sha256": "25f6b1e39516d2e6202cf1afc57885227919dcaebeeff8ec0d6ea53c892caccd",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_automation/__main__.py",
+      "git_before_sha256": "bf9375cbb40786ccf58f6bcad22cd962b43be75d2773aa111f54f713e6eceb99",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_automation/delivery.py",
+      "git_before_sha256": "6a243ed199354aeb69251ba658b49dd06ff910502e5ccf5529b4c1d97c979165",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_automation/engine.py",
+      "git_before_sha256": "325e16c1c27db9ee13f120f1eb26df1465c1e980f5220ccae99df0fa7224c8ea",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_automation/evidence.py",
+      "git_before_sha256": "95ffcdb24faf46360a0e033060076fffd21fea1bb702da79b879550b927c938c",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_automation/github_release.py",
+      "git_before_sha256": "640302052f2c18953baa247c3d3e901858984a1d53a9a32bb8a002f3bd780b1b",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_automation/hooks.py",
+      "git_before_sha256": "37b4bb767b75a23b0513fa7e74108234e3f0192e0146e6ca2008e82ea78f92a7",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_automation/install.py",
+      "git_before_sha256": "e21c988f98d518f301ac3e98124e309e84eaf627f07c26689039aaac1217cd59",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_automation/main_acceptance.py",
+      "git_before_sha256": "8df6e711700b2fa80aa0e106324cac11dde8b77b799a193606928153aa5c2606",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_automation/qa.py",
+      "git_before_sha256": "fdd7e21930e2f7b0e4854a0fdecaa536480837b66f7736de663a436270106286",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_automation/rpc.py",
+      "git_before_sha256": "472c7a4d5349d869489ab4fe15cc45e62820eaf703aea083e6d7d58d8c61ff86",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_automation/state.py",
+      "git_before_sha256": "b5856f488247063ef13eedf1200c9ab22f4a6050412bf9e6d4e7f69865ec2f82",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_automation/team.py",
+      "git_before_sha256": "7c4215027bc0d78c158ef17c11ad0a399fa9189fd73c43cc40f77a782418dc45",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_automation/unit_qa.py",
+      "git_before_sha256": "ebb0e4c090b6286e28c2f3443828498b4427ab8fa94b9d886f8f405998e20260",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_knowledge/__init__.py",
+      "git_before_sha256": "2a3c645cab4832c50dc1d029afccaa7fdabf99b9d73241623e862c0b2a2f97e4",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_knowledge/__main__.py",
+      "git_before_sha256": "0acfa964fb5b8f4af8f68d4afa7a2cc0968fb8401e3b0b49a17cbd002f9b3cdd",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_knowledge/backup.py",
+      "git_before_sha256": "7fadddb1bd90deec3b71764483533bd9e5164f3fb499e60fc4a7953ee42344d1",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_knowledge/database.py",
+      "git_before_sha256": "4dd5a6c9bce28b4644a7f9dd11e1c59a5d66578c7868156366bb053ac3351cfc",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_knowledge/indexer.py",
+      "git_before_sha256": "d8495d7a67bd5ad61493bf9533700798ae9b719fbe98cfb675328b70a3462060",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_knowledge/migrations/env.py",
+      "git_before_sha256": "dc4dcd275660beb16b553a2b782ee4bd9662dfac41f0406629447fbec1c11e67",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_knowledge/migrations/versions/0001_base.py",
+      "git_before_sha256": "1e71a29ad4ff4a834ee7c4a05c85ce0ba332fe0992b558ee41205e0248a8a7ee",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_knowledge/migrations/versions/0002_fts.py",
+      "git_before_sha256": "f0be2427984957f3512d238c3036cd5facdc8ec69acd2fe2a2ec6e082f861891",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_knowledge/models.py",
+      "git_before_sha256": "d8fee7d19d48cfee74529146bbe97c19ac5addda00b51edcb7d82132dc31f77a",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_knowledge/queries.py",
+      "git_before_sha256": "f7c0f6b72c00df48252dfeaa7d0efd3f0438ed9024e5f032b9ca20e37a4b5ea1",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_knowledge/safety.py",
+      "git_before_sha256": "6d53709214c4057eab6e72d422d706dc44d823e31c9a0614ded281b1ce6c5bff",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "lads_knowledge/service.py",
+      "git_before_sha256": "4983db21250ea0debd02c81942a3fed529afe4b0376ba73ea8492c34ce9b943f",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "requirements-lads.txt",
+      "git_before_sha256": "e879a552a154033f00ed5c7acafc23821fd0aa03c678db80534e73d96639da16",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "schemas/lads-task-report.schema.json",
+      "git_before_sha256": "6e44db6086304a9aa2fac8fecb42d297f45b1d23a4d68a0ffde560a2cd8901ad",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "scripts/lads_github.py",
+      "git_before_sha256": "d1154be8b73cc8dfa6d824ef82c5f237c81e8f69d10ece9d8cfd8d607ed070d4",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "scripts/lads_hook.py",
+      "git_before_sha256": "9fe232907581c578f2b99af0574d6e32ecaa8d06f155e6dfbf4e5e6dd4abffb3",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "scripts/lads_orchestrator.py",
+      "git_before_sha256": "a9ceda36d90a17905c313f12a8c34abfcbfc0460cfc3601afaa540724252df79",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "scripts/lads_runtime.py",
+      "git_before_sha256": "4fa0e6090e97e4811a22a54ecd2ba69b24c5feb7ee0335e0245a3e3ae5b5f19a",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "scripts/lads_session.py",
+      "git_before_sha256": "b85b134ce80f20cc6ca37fefc25ed1ef5fd199e6ac6a25109c9d178c72fd3031",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "scripts/lads_stage3.py",
+      "git_before_sha256": "32b61f25b2b869a92ddbace40f00cea5a2524589e423e4ea9e37acc809625cf1",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "scripts/lifeos-deepseek.py",
+      "git_before_sha256": "23f04079bb4d6c899bce924d9a06e109b0723ce9c5e4adde833916feb3f8d57a",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "scripts/repository_check.py",
+      "git_before_sha256": null,
+      "source_after_sha256": "916525249e3a673165039e50ea0f8fab10b7602cce360179f8b368dba24d43df",
+      "kind": "added"
+    },
+    {
+      "path": "tests/acceptance/lads-native-hooks.py",
+      "git_before_sha256": "c46c2972a41aaabf6b8ddcdc1789a5c7bad3493fa334972300797a47b4760c41",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/acceptance/lads-stage3-files.py",
+      "git_before_sha256": "2b33cef26365a5d127c482a2596346ca02676660a29b6e1915a12801525bbd7b",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/acceptance/lads-stage3-live.py",
+      "git_before_sha256": "e6c3128c8b4c6b53c95f65a6eed811955738381d74ee7b8d4cfa52962437d818",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/acceptance/lads-stage3-main.py",
+      "git_before_sha256": "22e0365b87fea64c59eec001a7391a80570a0f92c9d7684cb9b3593e25738fed",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/automation/test_delivery.py",
+      "git_before_sha256": "79b977a0b7e14f6427d2b3c36f9c2441ecd88f219e3a903b92ed73153ce58513",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/automation/test_engine.py",
+      "git_before_sha256": "64d4352703b74da4efce4586cf89e251c474486b850f5af5e9289e782fa1fb0e",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/automation/test_github_release.py",
+      "git_before_sha256": "28f481a48b2c9a90eacd2bbf163732a56fa70bc7b4498769dc120c402748a5ee",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/automation/test_handoff_schema.py",
+      "git_before_sha256": "2cc19839dcfa59479a3a3753aa2683788cc42533a37026ffee1bb07e1632b195",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/automation/test_hooks.py",
+      "git_before_sha256": "d9f12ef556ce1b568cad09f8226d0007863e368b8782ddf0a9455204634368bc",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/automation/test_install.py",
+      "git_before_sha256": "cebe3a9ab3517f39b5c8a8085993bb3df71b1b597865c476adde1d732235be11",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/automation/test_main_acceptance.py",
+      "git_before_sha256": "2da5744b68fdb0032125f217e80c27627455e6c99d6b72892862c4183896ff35",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/automation/test_native_entrypoint.py",
+      "git_before_sha256": "261e70c03c5c4dc86f1ce98fa0e4b737f188eb657ab7681b604631e331816087",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/automation/test_protocol_guard.py",
+      "git_before_sha256": "5dcd453e7cc4c9c5e40051b8809981f78c8cf92327681815b9c509fec8ab9bb2",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/automation/test_python_runtime.py",
+      "git_before_sha256": "3d03361e96c4e1605be8ef4080e8acfdf8764baf3da338e076ad81a5ac02ee0e",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/automation/test_qa.py",
+      "git_before_sha256": "bd71285433ab9cbc8cc2ccd207824a97dac40ac4922ef3502d28c9a8c056b8d6",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/automation/test_rpc.py",
+      "git_before_sha256": "700854be34140f46ad14cec81b53bd2063f530035fa4eb957a6e768c76147687",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/automation/test_sessions.py",
+      "git_before_sha256": "349140603e115f43ebe94737d6b8fa4710062161cbb1f100a15eb5a7666857c9",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/automation/test_team.py",
+      "git_before_sha256": "3d9b7c53bd2445e1d3909838e3659e1be17a2e4b2e2448826111f99e9f80cf0a",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/automation/test_unit_qa.py",
+      "git_before_sha256": "50d899b3b9679416221795763821d6ba0da72bc7b29539094889b268128f9a09",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/browser/lads-regression.cjs",
+      "git_before_sha256": "43520dcb44a123c25342d91a78fdb9c653af9cd4bb57ed394733bb9f5395f4ad",
+      "source_after_sha256": "cdcf05753831ccd695743032c9c417b980f4f42630cb890f2057bf4133d32590",
+      "kind": "modified"
+    },
+    {
+      "path": "tests/knowledge/file_acceptance.py",
+      "git_before_sha256": "e2f08ba377ca5c46cbf82c6d78f0f6abdc22a198fd954bbc7f9b4b03080bd493",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/knowledge/test_core.py",
+      "git_before_sha256": "108a7b73616e061cd46f19e4f1d0ea7d38244af50b12e20878a167213ad61180",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/knowledge/test_indexer.py",
+      "git_before_sha256": "defa8d583c51f7c8e48e88a918a7e852400aba72305165bc563e4f204d5d4fc9",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/lads/test_orchestrator.py",
+      "git_before_sha256": "241d4e445bdd8eee9f54563c361a8b6f42dd41f050f84d0c6243948c24017742",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    },
+    {
+      "path": "tests/lads/test_runtime.py",
+      "git_before_sha256": "bd2cd116008d69ec42a14ea740ec3f3c15c3f955228be69ef268c47266a21fa6",
+      "source_after_sha256": null,
+      "kind": "deleted"
+    }
+  ]
+}

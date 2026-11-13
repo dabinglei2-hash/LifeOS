@@ -1,0 +1,20 @@
+name: LifeOS production deployment readiness
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        required: true
+        type: choice
+        options: [DO_NOT_DEPLOY, REQUEST_PRODUCTION_APPROVAL]
+permissions:
+  contents: read
+jobs:
+  readiness:
+    if: github.ref == 'refs/heads/main' && inputs.confirmation == 'REQUEST_PRODUCTION_APPROVAL'
+    environment: production
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report unconfigured deployment target
+        run: |
+          echo "BLOCKED: no authorized production host, domain or cloud target configured. No deployment occurs."
+          exit 1
