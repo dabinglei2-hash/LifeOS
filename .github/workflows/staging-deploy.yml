@@ -1,0 +1,17 @@
+name: LifeOS staging deployment readiness
+on:
+  workflow_run:
+    workflows: [LADS CI]
+    types: [completed]
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  readiness:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report unconfigured deployment target
+        run: |
+          echo "BLOCKED: no authorized staging host, domain or cloud target configured. No deployment occurs."
+          exit 1
