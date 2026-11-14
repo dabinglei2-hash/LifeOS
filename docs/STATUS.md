@@ -1,3 +1,7 @@
+## 2026-11-14 Sites只读检查
+
+已找到既有ChatGPT Sites站点并核实owner/public权限，首页及主要资源HTTP200；隔离59文件构建检查通过。线上版本、权限、数据与产品代码未变，未部署。发布链仍须正式门禁及生产授权，Python Notion代理未托管。详见[Sites检查](SITES_READINESS_20261114.md)。
+
 # 当前状态（双仓库源代码迁移已验真）
 
 LifeOS 与 LifeOS-DevTeam 均为 dabinglei2-hash 的独立 Public 仓库。产品 PR #5（162ab01f）、研发 PR #1（63d9278f）已真实 CI 和原生 Auto-merge，独立四角色、MAIN-ACK、文档/知识与幂等门禁经过实际验证。原项目的 HEAD、工作区和 index 保留；业务数据及格式不变。
